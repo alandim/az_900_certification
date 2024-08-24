@@ -13,7 +13,6 @@
 - A escala horizontal é adição ou subtração do número de recursos.</p>
    
 
-
 ## Confiabilidade
 
 <p align="justify">Resiliência é a capacidade que um sistema tem de se recuperar de falhas e continuar funcionando. Ela também é um dos pilares do Microsoft Azure Well-Architected Framework.</p>
