@@ -1,5 +1,3 @@
-<h1 align="center" style="border: none;"> Bloco 2 - Benefícios da Nuvem</h1>
-
 ## Alta disponibilidade na nuvem
 <p align="justify">Refere-se à capacidade de manter um serviço ou aplicativo em execução sem interrupções, mesmo em caso de falhas de hardware ou software. A alta disponibilidade ajuda a garantir que os usuários possam acessar os serviços e aplicativos quando precisarem.</p>
 
@@ -12,7 +10,6 @@
 
 - A escala horizontal é adição ou subtração do número de recursos.</p>
    
-
 ## Confiabilidade
 
 <p align="justify">Resiliência é a capacidade que um sistema tem de se recuperar de falhas e continuar funcionando. Ela também é um dos pilares do Microsoft Azure Well-Architected Framework.</p>
