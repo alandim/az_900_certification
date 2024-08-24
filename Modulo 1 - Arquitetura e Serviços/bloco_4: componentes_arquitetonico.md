@@ -37,7 +37,7 @@ Vantagens:
 
 - **Serviços não regionais:** os serviços estão sempre disponíveis em geografias do Azure e são resilientes a interrupções em toda a zona, bem como a interrupções em toda a região.
 
-## Tópico 3 - Descrever os datacenters do Azure
+## Descrever os datacenters do Azure
 
 <p align="justify">Os datacenters do Azure são instalações físicas em todo o mundo que são projetadas para hospedar servidores, armazenamento, redes e outros componentes de infraestrutura de nuvem do Azure. Cada datacenter do Azure é composto por milhares de servidores, roteadores, switches e outros equipamentos de rede, e é gerenciado por uma equipe de técnicos especializados em datacenters.</p>
 
