@@ -2,12 +2,9 @@
 
 <p align="justify">A Computação do Azure é um serviço sob demanda que fornece recursos de computação, como discos, processadores, memória, rede e sistemas operacionais.</p>
 
-### Máquinas Virtuais 
-<p align="justify">No Microsoft Azure, existem diferentes opções para a computação, incluindo instâncias de contêiner, máquinas virtuais (VMs) e funções.</p>
+<h3><strong style='color: skyblue'>Máquina Virtual</strong></h3>
 
-<p align="justify">O Azure fornece o Azure Virtual Machines para criar e gerenciar VMs permitindo executar aplicativos e serviços como se estivessem em um ambiente local. As VMs do Azure oferecem alta disponibilidade, escalabilidade, desempenho e segurança.</p>
-
-<p align="justify">As VMs podem ser personalizadas para atender às necessidades específicas dos aplicativos e suportam uma ampla variedade de sistemas operacionais e linguagens de programação.</p>
+<p align="justify">O Azure fornece o Azure Virtual Machines para criar e gerenciar VMs permitindo executar aplicativos e serviços como se estivessem em um ambiente local. As VMs do Azure oferecem alta disponibilidade, escalabilidade, desempenho e segurança. As VMs podem ser personalizadas para atender às necessidades específicas dos aplicativos e suportam uma ampla variedade de sistemas operacionais e linguagens de programação.</p>
 
 <p align="justify">As VMs fornecem IaaS (infraestrutura como serviço) na forma de um servidor virtualizado e podem ser usadas de várias maneiras. Como em um computador físico, você pode personalizar todos os programas de software em execução na VM. As VMs são uma opção ideal quando você precisa de:</p>
 
@@ -17,6 +14,10 @@
 
 <p align="justify">Uma VM do Azure oferece a flexibilidade da virtualização sem a necessidade de comprar e manter o hardware físico que a executa. No entanto, como uma oferta de IaaS, você ainda precisa configurar, atualizar e manter o software executado na VM.</p>
  
+<p align="justify">Os <u>conjuntos de dimensionamento</u> permitem que você gerencie, configure e atualize centralmente um grande número de VMs em minutos. O número de instâncias de VM pode aumentar ou diminuir automaticamente em resposta à demanda ou você pode defini-lo para uma escala com base em uma agenda definida. Os conjuntos de dimensionamento de máquinas virtuais também implantam automaticamente um balanceador de carga para garantir que seus recursos estejam sendo usados com eficiência.</p>
+
+<p align="justify">Os <u>conjuntos de disponibilidade</u> de máquinas virtuais são outra ferramenta para ajudá-lo a criar um ambiente mais resiliente e altamente disponível. Os conjuntos de disponibilidade foram projetados para garantir que as VMs escalonem atualizações e tenham conectividade de rede e energia variadas, impedindo que você perca todas as suas VMs com uma só falha de rede ou energia.</p>
+
 <p align="justify">As VMs são adequadas para aplicativos que exigem mais controle sobre o ambiente de execução e onde a portabilidade não é uma preocupação. As VMs são comumente usadas para hospedar aplicativos empresariais, bancos de dados e aplicativos de computação intensiva.</p>
 
 ### Funções
