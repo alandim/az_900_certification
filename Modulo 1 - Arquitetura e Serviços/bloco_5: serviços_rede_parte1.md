@@ -1,4 +1,6 @@
-## Comparação de tipos de computação
+## Serviços de computação do Azure
+
+<p align="justify">A Computação do Azure é um serviço sob demanda que fornece recursos de computação, como discos, processadores, memória, rede e sistemas operacionais.</p>
 
 ### Máquinas Virtuais 
 <p align="justify">No Microsoft Azure, existem diferentes opções para a computação, incluindo instâncias de contêiner, máquinas virtuais (VMs) e funções.</p>
