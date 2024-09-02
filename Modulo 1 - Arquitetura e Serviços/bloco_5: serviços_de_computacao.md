@@ -65,3 +65,9 @@ Os contêineres são leves e projetados para serem criados, dimensionados e inte
 <p align="justify">É uma boa escolha para aplicativos que exigem escalabilidade automática e execução de tarefas pequenas e específicas em resposta a eventos. É uma opção popular para a criação de microsserviços e para a execução de tarefas em lotes.</p>
 
 <p align="justify">As funções podem ser sem estado ou com estado. Quando eles são sem estado (o padrão), eles se comportam como se fossem reiniciados sempre que respondem a um evento. Quando são com estado (chamadas de Durable Functions), um contexto é passado pela função para acompanhar a atividade anterior.</p>
+
+## Serviços de aplicativo do Azure
+
+<p align="justify">O Serviço de Aplicativo do Azure é uma plataforma totalmente gerenciada para criar, implantar e escalar aplicativos com rapidez. O Serviço permite que você se concentre em criar e manter seu aplicativo, e o Azure se concentra em manter o ambiente em funcionamento.</p>
+
+<p align="justify">O Serviço de Aplicativo do Azure é um serviço com base em HTTP para hospedagem de aplicativos Web, APIs REST e back-ends móveis sendo uma oferta de PaaS. Ele dá suporte a várias linguagens, incluindo .NET, .NET Core, Java, Ruby, Node.js, PHP ou Python. Ele também dá suporte a ambientes Windows e Linux.</p>
