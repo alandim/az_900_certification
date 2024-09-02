@@ -31,3 +31,20 @@
 <p align="justify">O Express Route do Azure amplia redes locais para o Azure por meio de uma conexão privada facilitada por um provedor de conectividade. Essa conexão é chamada de Circuito do ExpressRoute. 
 </p>
 <p align="justify">Ele estabelece uma conexão direta através de provedores de rede selecionados, contornando a Internet pública. Essa configuração permite que as conexões do ExpressRoute ofereçam mais confiabilidade, velocidades mais rápidas, latências consistentes e maior segurança do que as conexões típicas pela Internet.</p>
+
+<h3><strong style='color: skyblue'>DNS</strong></h3>
+
+<p align="justify">O DNS do Azure é um serviço de hospedagem para domínios DNS que fornece a resolução de nomes usando a infraestrutura do Microsoft Azure. Ao hospedar seus domínios no Azure, você pode gerenciar seus registros DNS usando as mesmas credenciais, APIs, ferramentas e cobrança que seus outros serviços do Azure.</p>
+
+<p align="justify">O DNS do Azure usa o escopo e a escala do Microsoft Azure para proporcionar inúmeros benefícios, incluindo:</p>
+
+- Confiabilidade e desempenho
+- Segurança
+- Facilidade de uso
+- Personalizar redes virtuais
+- Registros de alias
+
+<p align="justify">
+DNS Público: é um serviço de DNS hospedado que permite a resolução de nomes de domínio para recursos públicos no Azure, como máquinas virtuais, serviços de nuvem, pontos de extremidade de balanceamento de carga, entre outros.</p>
+
+<p align="justify">DNS Privado: é um serviço de resolução de nomes privados que permite a resolução de nomes de domínio em redes virtuais no Azure. Ele é usado para resolver nomes de recursos dentro da rede virtual, como máquinas virtuais, serviços, bancos de dados, entre outros.</p>
