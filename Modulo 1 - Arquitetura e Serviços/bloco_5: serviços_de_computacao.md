@@ -20,18 +20,24 @@
 
 <p align="justify">As VMs são adequadas para aplicativos que exigem mais controle sobre o ambiente de execução e onde a portabilidade não é uma preocupação. As VMs são comumente usadas para hospedar aplicativos empresariais, bancos de dados e aplicativos de computação intensiva.</p>
 
-### Funções
+<h3><strong style='color: skyblue'>Área de Trabalho Virtual</strong></h3>
 
-<p align="justify">
-São uma opção de computação sem servidor, onde o código é executado em resposta a eventos, sem a necessidade de provisionar e gerenciar servidores. As funções são escaláveis, cobradas com base no uso e são adequadas para cenários em que as cargas de trabalho são intermitentes ou variáveis. O Azure fornece o Azure Functions, que permite criar e executar funções facilmente.
+<p align="justify">A Área de Trabalho Virtual do Azure (Azure Virtual Desktop) é um serviço de virtualização de desktops totalmente gerenciado e baseado na nuvem. Ele permite que as organizações ofereçam acesso remoto seguro e otimizado a aplicativos e desktops virtuais a partir de qualquer dispositivo e em qualquer lugar do mundo.</p>
+
+<p align="justify">Com a Área de Trabalho Virtual do Azure, os usuários podem acessar um ambiente de trabalho completo em nuvem, incluindo o sistema operacional, aplicativos, dados e configurações pessoais. Isso permite que eles tenham uma experiência de trabalho consistente, independentemente do dispositivo que estão usando. Além disso, as organizações podem provisionar e gerenciar desktops virtuais para seus usuários de forma centralizada, reduzindo custos e simplificando o gerenciamento de TI.
 </p>
 
-### Contêineres
+<h3><strong style='color: skyblue'>Contêineres</strong></h3>
+
 <p align="justify">
-O Azure Container Instances é um serviço de computação sem servidor do Microsoft Azure que permite executar contêineres de maneira rápida e simples, sem a necessidade de provisionar ou gerenciar máquinas virtuais subjacentes. Ele fornece um ambiente isolado e sob demanda para a execução de contêineres baseados em Docker.
+Os contêineres são leves e projetados para serem criados, dimensionados e interrompidos dinamicamente. É possível criar e implantar máquinas virtuais à medida que a demanda do aplicativo aumenta, mas os contêineres são um método mais leve e ágil. Os contêineres foram projetados para permitir que você responda às alterações sob demanda. Com contêineres, você pode reiniciar rapidamente se houver uma falha ou de uma interrupção de hardware. Um dos mecanismos de contêiner mais populares é o Docker, e o Azure é compatível com o Docker.
 </p>
 
-<p align="justify">Os Aplicativos de Contêiner do Azure são semelhantes, em muitos aspectos, a uma instância de contêiner. Eles permitem que você comece a trabalhar imediatamente, removem a parte de gerenciamento de contêineres e são uma oferta de PaaS. Os Aplicativos de Contêiner têm benefícios extras, como a capacidade de incorporar balanceamento de carga e colocação em escala. Essas outras funções permitem que você seja mais flexível em seu design.</p>
+<p align="justify">As Instâncias de Contêiner do Azure oferecem a maneira mais rápida e simples de executar um contêiner no Azure, sem a necessidade de gerenciar máquinas virtuais nem adotar serviços adicionais. Instâncias de Contêiner do Azure são uma oferta de PaaS (plataforma como serviço).</p>
+
+<p align="justify">Os Aplicativos de Contêiner do Azure são semelhantes, em muitos aspectos, a uma instância de contêiner. Eles permitem que você comece a trabalhar imediatamente, removem a parte de gerenciamento de contêineres e são uma oferta de PaaS. Os Aplicativos de Contêiner têm benefícios extras, como a capacidade de incorporar balanceamento de carga e colocação em escala.</p>
+
+<h3><strong style='color: skyblue'>Kubernetes</strong></h3>
 
 <p align="justify">O Serviço de Kubernetes do Azure (AKS) é um serviço de orquestração de contêiner. Um serviço de orquestração gerencia o ciclo de vida dos contêineres. Quando você está implantando uma frota de contêineres, o AKS pode tornar o gerenciamento de frota mais simples e eficiente.</p>
 
@@ -39,3 +45,11 @@ O Azure Container Instances é um serviço de computação sem servidor do Micro
 
 <p align="justify">Resumindo, é melhor usar o Azure Container Instances quando você precisa de uma execução rápida e simples de contêineres isolados, especialmente em cargas de trabalho de curta duração ou tarefas pontuais. Por outro lado, o Azure Kubernetes Service é mais adequado para cargas de trabalho complexas e escaláveis, onde você precisa de recursos avançados de orquestração, gerenciamento e escalabilidade automática.
 </p>
+
+<h3><strong style='color: skyblue'>Funções</strong></h3>
+
+<p align="justify">
+São uma opção de computação sem servidor, onde o código é executado em resposta a eventos, sem a necessidade de provisionar e gerenciar servidores. As funções são escaláveis, cobradas com base no uso e são adequadas para cenários em que as cargas de trabalho são intermitentes ou variáveis. O Azure fornece o Azure Functions, que permite criar e executar funções facilmente.
+</p>
+
+<p align="justify">As funções podem ser sem estado ou com estado. Quando eles são sem estado (o padrão), eles se comportam como se fossem reiniciados sempre que respondem a um evento. Quando são com estado (chamadas de Durable Functions), um contexto é passado pela função para acompanhar a atividade anterior.</p>
