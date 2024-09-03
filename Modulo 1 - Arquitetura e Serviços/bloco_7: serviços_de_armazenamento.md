@@ -4,14 +4,14 @@
 
 <p align="justify"> Dos principais serviços de armazenamento do Azure incluem:</p>
 
-1. O ***armazenamento de contêiner (blob)*** é otimizado para armazenar grandes quantidades de dados não estruturados, como dados binários ou de texto.
-2. O ***armazenamento em disco*** fornece discos para máquinas virtuais, aplicativos e outros serviços acessarem e usarem.
+1. O ***armazenamento de contêiner (blob)*** é otimizado para armazenar grandes quantidades de dados não estruturados, como dados binários ou de texto - "https://storage-account-name.blob.core.windows.net".
+2. O ***armazenamento em disco*** fornece discos para máquinas virtuais, aplicativos e outros serviços acessarem e usarem - "https://storage-account-name.dfs.core.windows.net".
 
-3. Os ***Arquivos do Azure*** configuram compartilhamentos de arquivos de rede altamente disponíveis que podem ser acessados usando o protocolo padrão SMB (Bloco de Mensagens do Servidor).
+3. Os ***Arquivos do Azure*** configuram compartilhamentos de arquivos de rede altamente disponíveis que podem ser acessados usando o protocolo padrão SMB (Bloco de Mensagens do Servidor) - "https://storage-account-name.file.core.windows.net".
 
-4. As ***Filas do Azure*** são um armazenamento de mensagens para um sistema de mensagens confiável entre componentes do aplicativo.
+4. As ***Filas do Azure*** são um armazenamento de mensagens para um sistema de mensagens confiável entre componentes do aplicativo - "https://storage-account-name.queue.core.windows.net".
 
-5. As ***Tabelas do Azure*** são a opção de tabela NoSQL para dados estruturados e não relacionais.
+5. As ***Tabelas do Azure*** são a opção de tabela NoSQL para dados estruturados e não relacionais - "https://storage-account-name.table.core.windows.net".
 
 <p align="justify">Uma conta de armazenamento fornece um namespace exclusivo para os dados do Armazenamento do Azure que podem ser acessados de qualquer lugar do mundo por HTTP ou HTTPS. Os dados nesta conta são seguros, altamente disponíveis, duráveis e maciçamente escalonáveis.</p>
 
@@ -29,4 +29,13 @@
 
 ## Opções de Redundância
 
-<p align="justify">As opções de redundância de armazenamento do Microsoft Azure são utilizadas para fornecer alta disponibilidade e resiliência aos dados armazenados no Azure. Existem cinco opções de redundância de armazenamento:</p>
+<p align="justify">As opções de redundância de armazenamento do Microsoft Azure são utilizadas para fornecer alta disponibilidade e resiliência aos dados armazenados no Azure. Existem seis opções de redundância de armazenamento:</p>
+
+| Configuração               | Implantação                       | Durabilidade                                            |
+|----------------------------|-----------------------------------|---------------------------------------------------------|
+| LRS (Locally Redundant Storage) | Dentro de um único datacenter       | Alta durabilidade (99,999999999% - 11 9's) dentro do datacenter local |
+| ZRS (Zone-Redundant Storage)    | Em múltiplas zonas dentro de uma região | Alta durabilidade (99,9999999999% - 12 9's) com replicação entre zonas  |
+| GRS (Geo-Redundant Storage)     | Em múltiplas regiões (Primária e Secundária) | Muito alta durabilidade (99,99999999999999% - 16 9's) com replicação geográfica |
+| RA-GRS (Read-Access Geo-Redundant Storage) | Em múltiplas regiões (Primária e Secundária) com acesso de leitura à região secundária | Mesma durabilidade que GRS, com a vantagem adicional de leitura na réplica secundária |
+| GZRS (Geo-Zone-Redundant Storage) | Múltiplas zonas em uma região primária e replicação para uma região secundária | Altíssima durabilidade (99,99999999999999% - 16 9's), combinando zona e replicação geográfica |
+| RA-GZRS (Read-Access Geo-Zone-Redundant Storage) | Múltiplas zonas em uma região primária e replicação para uma região secundária com acesso de leitura | Mesma durabilidade que GZRS, com a vantagem adicional de leitura na réplica secundária |
