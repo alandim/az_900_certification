@@ -16,7 +16,7 @@
 <p align="justify">Um domínio gerenciado é configurado para executar uma sincronização unidirecional do Microsoft Entra ID para o Microsoft Entra Domain Services. É possível criar recursos diretamente no domínio gerenciado, mas eles não são sincronizados com o Microsoft Entra ID. Em um ambiente híbrido com um ambiente local do AD DS, o Microsoft Entra Connect sincroniza as informações de identidade com o Microsoft Entra ID, que, por sua vez, é sincronizado com o domínio gerenciado.</p>
 
 <p align="center">
-  <img src="https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/azure-active-directory-sync-topology-7359f2b8.png" width="2000" height="400">
+  <img src="https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/azure-active-directory-sync-topology-7359f2b8.png" width="800" height="200">
 </p>
 
 ## Métodos de Autenticação no Azure
