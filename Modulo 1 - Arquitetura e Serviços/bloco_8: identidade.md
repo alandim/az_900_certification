@@ -44,3 +44,13 @@
 
 <p align="justify">Azure AD B2C é um serviço de gerenciamento de identidade para consumidores. Ele permite que empresas criem soluções personalizadas de autenticação para seus clientes, permitindo que eles usem suas contas de redes sociais ou criem novas contas usando um sistema de gerenciamento de identidade seguro.
 </p>
+
+## Acesso Condicional
+
+<p align="justify">O Acesso Condicional é uma ferramenta que o Microsoft Entra ID usa para permitir (ou negar) o acesso a recursos baseados em sinais de identidade. Esses sinais incluem quem é o usuário, onde ele está e de qual dispositivo está solicitando acesso.</p>
+
+<p align="justify">Com base nesses sinais, a decisão poderá ser permitir acesso completo se o usuário estiver entrando de seu local usual. Se o usuário estiver entrando de uma localização incomum ou que esteja marcada como de alto risco, o acesso poderá ser totalmente bloqueado ou possivelmente concedido depois que o usuário fornecer uma segunda forma de autenticação.</p>
+
+<p align="center">
+  <img src="https://learn.microsoft.com/pt-br/training/wwl-azure/describe-azure-identity-access-security/media/conditional-access-9bd268b8.png" width="800" height="200">
+</p>
