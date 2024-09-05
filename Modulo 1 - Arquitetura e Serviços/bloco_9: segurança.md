@@ -32,3 +32,9 @@ Uma estratégia de defesa em profundidade usa uma série de mecanismos para redu
 - A camada de aplicativo ajuda a garantir que os aplicativos estejam seguros e livres de vulnerabilidades de segurança.
 
 - A camada de dados controla o acesso aos dados corporativos e do cliente que você precisa proteger.
+
+## Microsoft Defender para Nuvem
+
+<p align="justify">O Defender para Nuvem é uma ferramenta de monitoramento para gerenciamento da postura de segurança e proteção contra ameaças. Ele monitora os seus ambientes de nuvem, locais, híbridos e de várias nuvens para fornecer diretrizes e notificações com o objetivo de fortalecer sua postura de segurança.</p>
+
+<p align="justify">O Defender para Nuvem fornece as ferramentas necessárias para proteger seus recursos, acompanhar sua postura de segurança, proteger contra ataques cibernéticos e simplificar o gerenciamento de segurança. A implantação do Defender para Nuvem é fácil e já está integrada nativamente ao Azure.</p>
