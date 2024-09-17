@@ -2,6 +2,8 @@
 
 <p align="justify">O Portal do Azure é uma interface gráfica baseada na web que permite gerenciar e monitorar recursos do Azure. Ele fornece uma visão geral de todos os serviços do Azure usados, permitindo que os usuários gerenciem os recursos, monitorem o uso e configurem as opções do serviço. O portal do Azure é altamente personalizável e pode ser usado para gerenciar qualquer serviço do Azure, independentemente de qual modelo de implantação (clássico ou Resource Manager) foi usado.</p>
 
+<p align="justify">O portal do Azure fornece uma GUI para exibir todos os serviços que você está usando, criar novos serviços, configurar seus serviços e exibir relatórios.</p>
+
 ## Azure Cloud Shell
 
 <p align="justify">O Azure Cloud Shell é uma ferramenta de shell baseada em navegador que permite criar, configurar e gerenciar recursos do Azure usando um shell. O Azure Cloud Shell dá suporte ao Azure PowerShell e à CLI (Interface de Linha de Comando) do Azure, que é um shell bash.</p>
