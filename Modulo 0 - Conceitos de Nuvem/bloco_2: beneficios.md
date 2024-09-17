@@ -52,3 +52,7 @@
     - Usando uma interface de linha de comando.
     - Usando APIs.
     - Usando o PowerShell.
+      
+## Agilidade
+
+<p align="justify">Agilidade significa que você pode implantar e configurar recursos baseados em nuvem rapidamente à medida que os requisitos do aplicativo forem alterados.</p>
