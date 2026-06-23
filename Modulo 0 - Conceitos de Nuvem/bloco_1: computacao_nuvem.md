@@ -74,17 +74,12 @@ para atender aos requisitos de segurança e conformidade.
 
 Vantagens: Controle, flexibilidade, custo-benefício e facilidade.
 
-4. **MultiCloud** 
-<p>Um quarto cenário, e cada vez mais provável, é um cenário multicloud. Em um cenário multicloud, você usa vários provedores de nuvem pública. Talvez você use recursos diferentes de provedores de nuvem diferentes. Ou talvez você tenha iniciado sua jornada na nuvem com um provedor e esteja em processo de migração para outro provedor. Independentemente disso, em um ambiente multicloud você lida com dois (ou mais) provedores de nuvem pública e gerencia recursos e segurança em ambos os ambientes.</p>
+4. **MultiCloud:** 
+<p align="justify">Um quarto cenário, e cada vez mais provável, é um cenário multicloud. Em um cenário multicloud, você usa vários provedores de nuvem pública. Talvez você use recursos diferentes de provedores de nuvem diferentes. Ou talvez você tenha iniciado sua jornada na nuvem com um provedor e esteja em processo de migração para outro provedor. Independentemente disso, em um ambiente multicloud você lida com dois (ou mais) provedores de nuvem pública e gerencia recursos e segurança em ambos os ambientes.</p>
 
-## Comparação entre CapEx VS OpEx
-
-<p align="justify"><strong style="color: gray;">CapEx</strong> realiza o gasto incial na infraestrutura física tendo um valor que é reduzido ao longo do tempo, como máquinas, equipamentos, edifícios e infraestrutura de tecnologia.</p>
-
-<p align="justify"><strong style="color: gray;">OpEx</strong> se refere aos gastos operacionais refere-se a um tipo de gasto que se destina a financiar as atividades cotidianas de uma empresa, como salários, aluguéis, energia elétrica, serviços de internet, entre outros.</p>
 
 ## Modelo baseado em Consumo
 
-<p align="justify"><strong style="color: gray;">O modelo baseado no consumo</strong>, também conhecido como "pay-as-you-go", é um modelo de cobrança em que os clientes pagam apenas pelos recursos de nuvem que usam. Em outras palavras, os clientes pagam com base no consumo de recursos, como armazenamento, processamento e transferência de dados.</p>
+<p align="justify">A computação em nuvem opera em um modelo baseado no consumo. Você paga pelos recursos de TI que usa, e nada mais. Em vez de comprar e manter sua própria infraestrutura de datacenter, você aluga energia computacional e armazenamento e libera esses recursos quando terminar.</p>
 
-<p align="justify">O modelo baseado no consumo oferece uma maneira flexível e econômica de usar recursos de nuvem, o que pode ser uma opção atraente para empresas que precisam de escalabilidade ou que desejam experimentar a nuvem sem se comprometer com a compra de recursos de nuvem fixos.</p>
+<p align="justify">CapEx refere-se a gastos iniciais em infraestrutura física, como servidores, hardware de rede e espaço de datacenter. OpEx refere-se aos gastos contínuos com serviços ao longo do tempo. Como você paga por serviços em nuvem enquanto os consome, a computação em nuvem é classificada como uma despesa operacional.</p>
