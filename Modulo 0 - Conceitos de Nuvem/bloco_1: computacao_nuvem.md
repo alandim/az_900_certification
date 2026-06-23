@@ -16,6 +16,11 @@
 
 <p align="justify">O <strong style="color: gray;">modelo de responsabilidade compartilhada</strong> define que tanto o provedor de serviços em nuvem quanto o cliente compartilham a responsabilidade pela segurança e conformidade dos dados e sistemas hospedados na nuvem.
 </p>
+<p>O modelo de responsabilidade compartilhada está fortemente ligado aos tipos de serviço em nuvem: infraestrutura como serviço (IaaS), plataforma como serviço (PaaS) e software como serviço (SaaS).</p>
+<p>O diagrama a seguir destaca como o Modelo de Responsabilidade Compartilhada informa quem é responsável pelo que, dependendo do tipo de serviço na nuvem.</p>
+<p align="center">
+  <img src="https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-model.png" alt="Texto alternativo" width="2000" height="400">
+</p>
 
 1. Você sempre será responsável por:
 
@@ -33,10 +38,6 @@
     * controle de rede
     * formulários
     * identidade e infraestrutura
-
-<p align="center">
-  <img src="https://learn.microsoft.com/pt-br/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-b3829bfe.svg" alt="Texto alternativo" width="2000" height="400">
-</p>
 
 
 ## Modelos de Nuvem
