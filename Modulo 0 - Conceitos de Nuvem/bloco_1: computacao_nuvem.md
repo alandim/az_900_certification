@@ -74,6 +74,9 @@ para atender aos requisitos de segurança e conformidade.
 
 Vantagens: Controle, flexibilidade, custo-benefício e facilidade.
 
+4. **MultiCloud** 
+<p>Um quarto cenário, e cada vez mais provável, é um cenário multicloud. Em um cenário multicloud, você usa vários provedores de nuvem pública. Talvez você use recursos diferentes de provedores de nuvem diferentes. Ou talvez você tenha iniciado sua jornada na nuvem com um provedor e esteja em processo de migração para outro provedor. Independentemente disso, em um ambiente multicloud você lida com dois (ou mais) provedores de nuvem pública e gerencia recursos e segurança em ambos os ambientes.</p>
+
 ## Comparação entre CapEx VS OpEx
 
 <p align="justify"><strong style="color: gray;">CapEx</strong> realiza o gasto incial na infraestrutura física tendo um valor que é reduzido ao longo do tempo, como máquinas, equipamentos, edifícios e infraestrutura de tecnologia.</p>
