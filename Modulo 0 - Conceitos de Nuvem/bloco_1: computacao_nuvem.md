@@ -19,7 +19,7 @@
 <p>O modelo de responsabilidade compartilhada está fortemente ligado aos tipos de serviço em nuvem: infraestrutura como serviço (IaaS), plataforma como serviço (PaaS) e software como serviço (SaaS).</p>
 <p>O diagrama a seguir destaca como o Modelo de Responsabilidade Compartilhada informa quem é responsável pelo que, dependendo do tipo de serviço na nuvem.</p>
 <p align="center">
-  <img src="https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-model.png" alt="Texto alternativo" width="2000" height="700">
+  <img src="https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-model.png" alt="Texto alternativo" width="1000" height="700">
 </p>
 
 1. Você sempre será responsável por:
@@ -43,7 +43,7 @@
 
 <p align="justify">Os modelos de nuvem são as formas como as empresas podem utilizar a computação em nuvem para atender às suas necessidades de negócios. Os principais modelos de nuvem são: <strong style="color: gray;">pública, privada e híbrida.</strong></p>
 <p align="center">
-  <img src="https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/cloud-deployment-models.png" alt="Texto alternativo" width="2000" height="700">
+  <img src="https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/cloud-deployment-models.png" alt="Texto alternativo" width="1000" height="700">
 </p>
 
 1. **Nuvem Pública:** 
