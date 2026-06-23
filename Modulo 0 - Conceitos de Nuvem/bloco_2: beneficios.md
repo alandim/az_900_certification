@@ -1,5 +1,7 @@
 ## Alta disponibilidade na nuvem
-<p align="justify">Refere-se à capacidade de manter um serviço ou aplicativo em execução sem interrupções, mesmo em caso de falhas de hardware ou software. A alta disponibilidade ajuda a garantir que os usuários possam acessar os serviços e aplicativos quando precisarem.</p>
+<p align="justify">A alta disponibilidade concentra-se em garantir a máxima disponibilidade, independentemente de interrupções ou eventos que possam ocorrer.</p>
+
+<p align="justify">O Azure é um ambiente de nuvem altamente disponível com garantias de tempo de atividade, dependendo do serviço. Essas garantias fazem parte dos acordos de nível de serviço (SLAs).</p>
 
 ## Escalabilidade
 <p align="justify">Refere-se à capacidade de um serviço ou aplicativo de lidar com o aumento da demanda sem comprometer seu desempenho. Isso é alcançado através da capacidade de aumentar ou diminuir rapidamente os recursos de computação.</p>
@@ -12,13 +14,13 @@
    
 ## Confiabilidade
 
-<p align="justify">Resiliência é a capacidade que um sistema tem de se recuperar de falhas e continuar funcionando. Ela também é um dos pilares do Microsoft Azure Well-Architected Framework.</p>
+<p align="justify">Confiabilidade é a capacidade que um sistema tem de se recuperar de falhas e continuar funcionando.</p>
 
 <p align="justify">Devido ao design descentralizado, a nuvem naturalmente dá suporte a uma infraestrutura confiável e resiliente. Com um design descentralizado, a nuvem permite que você tenha recursos implantados em várias regiões do mundo. Com essa escala global, mesmo que ocorra um evento catastrófico em uma região, as outras regiões ainda estarão em funcionamento.</p>
 
 ## Previsibilidade
 
-<p align="justify">A previsibilidade na nuvem permite que você avance com confiança. A previsibilidade pode se concentrar na previsibilidade de desempenho ou na previsibilidade de custo. Tanto a previsibilidade de desempenho quanto a de custo são bastante influenciadas pelo Microsoft Azure Well-Architected Framework.</p>
+<p align="justify">A previsibilidade na nuvem permite que você avance com confiança. Implante uma solução construída em torno dessa estrutura e você terá uma solução cujo custo e desempenho são previsíveis.</p>
 
 - A **previsibilidade de desempenho** se concentra em prever os recursos necessários para oferecer uma experiência positiva aos clientes. O dimensionamento automático, o balanceamento de carga e a alta disponibilidade são apenas alguns dos conceitos de nuvem que dão suporte.
 
