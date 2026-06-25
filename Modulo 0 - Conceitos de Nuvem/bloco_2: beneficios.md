@@ -54,7 +54,16 @@
     - Usando uma interface de linha de comando.
     - Usando APIs.
     - Usando o PowerShell.
-      
+
+## Sustentabilidade
+
+<p align="justify">A computação em nuvem pode apoiar metas de sustentabilidade quando as equipes otimizam ativamente a forma como os recursos são implantados e usados.</p>
+
+   - Dimensionando os recursos quando a demanda diminui
+   - Desligando ou desalocando recursos que não estão em uso
+   - Escolha de serviços e configurações eficientes para reduzir o overprovisionamento
+   - Usando a governança e o monitoramento para rastrear as tendências de uso e otimizar as implantações ao longo do tempo
+
 ## Agilidade
 
 <p align="justify">Agilidade significa que você pode implantar e configurar recursos baseados em nuvem rapidamente à medida que os requisitos do aplicativo forem alterados.</p>
