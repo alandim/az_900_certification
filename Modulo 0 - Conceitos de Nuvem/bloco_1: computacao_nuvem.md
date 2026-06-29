@@ -83,3 +83,9 @@ Vantagens: Controle, flexibilidade, custo-benefício e facilidade.
 <p align="justify">A computação em nuvem opera em um modelo baseado no consumo. Você paga pelos recursos de TI que usa, e nada mais. Em vez de comprar e manter sua própria infraestrutura de datacenter, você aluga energia computacional e armazenamento e libera esses recursos quando terminar.</p>
 
 <p align="justify">CapEx refere-se a gastos iniciais em infraestrutura física, como servidores, hardware de rede e espaço de datacenter. OpEx refere-se aos gastos contínuos com serviços ao longo do tempo. Como você paga por serviços em nuvem enquanto os consome, a computação em nuvem é classificada como uma despesa operacional.</p>
+
+## O que posso fazer com o Azure?
+
+<p align="center">
+  <img src="https://learn.microsoft.com/pt-br/training/wwl-azure/describe-core-architectural-components-of-azure/media/azure-service-categories.png" alt="Texto alternativo" width="1000" height="500">
+</p>
