@@ -1,73 +1,151 @@
 ## Serviços de computação do Azure
 
-<p align="justify">A Computação do Azure é um serviço sob demanda que fornece recursos de computação, como discos, processadores, memória, rede e sistemas operacionais.</p>
+<p align="justify">A <strong>Computação do Azure</strong> fornece recursos de computação sob demanda, como processadores, memória, armazenamento, rede e sistemas operacionais. Esses recursos podem ser utilizados para executar aplicações, serviços e cargas de trabalho na nuvem.</p>
 
-<h3><strong style='color: skyblue'>Máquina Virtual</strong></h3>
+<h3><strong style='color: skyblue'>Máquinas Virtuais</strong></h3>
 
-<p align="justify">O Azure fornece o Azure Virtual Machines para criar e gerenciar VMs permitindo executar aplicativos e serviços como se estivessem em um ambiente local. As VMs do Azure oferecem alta disponibilidade, escalabilidade, desempenho e segurança. As VMs podem ser personalizadas para atender às necessidades específicas dos aplicativos e suportam uma ampla variedade de sistemas operacionais e linguagens de programação.</p>
+<p align="justify">O <strong>Azure Virtual Machines (VMs)</strong> permite criar e gerenciar máquinas virtuais na nuvem, possibilitando executar aplicações e serviços como se estivessem em um ambiente local.</p>
 
-<p align="justify">As VMs fornecem IaaS (infraestrutura como serviço) na forma de um servidor virtualizado e podem ser usadas de várias maneiras. Como em um computador físico, você pode personalizar todos os programas de software em execução na VM. As VMs são uma opção ideal quando você precisa de:</p>
+<p align="justify">As VMs são uma oferta de <strong>IaaS (Infraestrutura como Serviço)</strong> e fornecem um servidor virtualizado sobre o qual você possui um alto nível de controle. É possível escolher o sistema operacional, instalar softwares e configurar o ambiente de acordo com as necessidades da aplicação.</p>
 
-- Controle total sobre o SO (sistema operacional).
-- Capacidade para executar um software personalizado.
-- Usar configurações personalizadas de hospedagem.
+<p align="justify">As VMs são uma boa opção quando você precisa de:</p>
 
-<p align="justify">Uma VM do Azure oferece a flexibilidade da virtualização sem a necessidade de comprar e manter o hardware físico que a executa. No entanto, como uma oferta de IaaS, você ainda precisa configurar, atualizar e manter o software executado na VM.</p>
- 
-<p align="justify">Os <u>conjuntos de dimensionamento</u> permitem que você gerencie, configure e atualize centralmente um grande número de VMs em minutos. O número de instâncias de VM pode aumentar ou diminuir automaticamente em resposta à demanda ou você pode defini-lo para uma escala com base em uma agenda definida. Os conjuntos de dimensionamento de máquinas virtuais também implantam automaticamente um balanceador de carga para garantir que seus recursos estejam sendo usados com eficiência.</p>
+- Controle sobre o sistema operacional.
+- Capacidade de instalar e executar softwares personalizados.
+- Configurações específicas de hardware e software.
+- Migração de aplicações existentes para a nuvem sem grandes alterações.
 
-<p align="justify">Os <u>conjuntos de disponibilidade</u> de máquinas virtuais são outra ferramenta para ajudá-lo a criar um ambiente mais resiliente e altamente disponível. Os conjuntos de disponibilidade foram projetados para garantir que as VMs escalonem atualizações e tenham conectividade de rede e energia variadas, impedindo que você perca todas as suas VMs com uma só falha de rede ou energia.</p>
+<p align="justify">Uma VM oferece a flexibilidade da virtualização sem a necessidade de comprar ou manter o hardware físico. No entanto, como é uma oferta de IaaS, o cliente continua responsável pelo sistema operacional e pelo software executado na VM, incluindo configuração, atualizações e manutenção.</p>
 
-<p>A disponibilidade atinge esses objetivos agrupando VMs de duas maneiras: atualizar domínio e domínio de falha.</p>
+### Conjuntos de Dimensionamento de Máquinas Virtuais
 
-- **Domínio de atualização:** as VMs de grupos de domínio de atualização que podem ser reinicializadas ao mesmo tempo. Essa configuração permite aplicar atualizações sabendo que apenas um agrupamento de domínio de atualização está offline por vez. Todos os computadores em uma atualização de domínio de atualização. Um grupo de atualizações que passa pelo processo de atualização recebe um tempo de 30 minutos para se recuperar antes que a manutenção no próximo domínio de atualização seja iniciada.
+<p align="justify">Os <strong>Conjuntos de Dimensionamento de Máquinas Virtuais (Virtual Machine Scale Sets – VMSS)</strong> permitem criar e gerenciar um grupo de VMs idênticas de maneira centralizada.</p>
 
-- **Domínio de falha:** o domínio de falha agrupa suas VMs por origem de energia comum e comutador de rede. Por padrão, um conjunto de disponibilidade divide suas VMs em até três domínios de falha. Isso ajuda a proteger contra uma falha de energia física ou de rede, tendo VMs em diferentes domínios de falha (portanto, sendo conectadas a diferentes recursos de energia e rede).
+<p align="justify">O número de instâncias pode aumentar ou diminuir automaticamente de acordo com a demanda ou seguir uma programação definida. Isso permite que a capacidade computacional seja ajustada conforme a necessidade da aplicação.</p>
 
-<p align="justify">As VMs são adequadas para aplicativos que exigem mais controle sobre o ambiente de execução e onde a portabilidade não é uma preocupação. As VMs são comumente usadas para hospedar aplicativos empresariais, bancos de dados e aplicativos de computação intensiva.</p>
+<p align="justify">Os conjuntos de dimensionamento também podem trabalhar com balanceamento de carga, distribuindo o tráfego entre as instâncias disponíveis.</p>
 
-<h3><strong style='color: skyblue'>Área de Trabalho Virtual</strong></h3>
+> **AZ-900:** VMSS = várias VMs + gerenciamento centralizado + escalabilidade.
 
-<p align="justify">A Área de Trabalho Virtual do Azure (Azure Virtual Desktop) é um serviço de virtualização de desktops totalmente gerenciado e baseado na nuvem. Ele permite que as organizações ofereçam acesso remoto seguro e otimizado a aplicativos e desktops virtuais a partir de qualquer dispositivo e em qualquer lugar do mundo.</p>
+### Conjuntos de Disponibilidade
 
-<p align="justify">Com a Área de Trabalho Virtual do Azure, os usuários podem acessar um ambiente de trabalho completo em nuvem, incluindo o sistema operacional, aplicativos, dados e configurações pessoais. Isso permite que eles tenham uma experiência de trabalho consistente, independentemente do dispositivo que estão usando. Além disso, as organizações podem provisionar e gerenciar desktops virtuais para seus usuários de forma centralizada, reduzindo custos e simplificando o gerenciamento de TI.
-</p>
+<p align="justify">Os <strong>Conjuntos de Disponibilidade (Availability Sets)</strong> ajudam a aumentar a disponibilidade e a resiliência das VMs, distribuindo-as entre diferentes domínios de falha e de atualização.</p>
+
+<p align="justify">O objetivo é evitar que todas as VMs de uma aplicação sejam afetadas simultaneamente por uma falha física ou por uma manutenção planejada.</p>
+
+#### Domínio de atualização
+
+<p align="justify">Um <strong>domínio de atualização</strong> agrupa VMs que podem ser reiniciadas juntas durante uma manutenção planejada. As atualizações são aplicadas a um domínio por vez, mantendo os demais domínios disponíveis.</p>
+
+#### Domínio de falha
+
+<p align="justify">Um <strong>domínio de falha</strong> agrupa VMs que compartilham componentes físicos, como uma fonte de energia ou um switch de rede. Distribuir as VMs entre diferentes domínios de falha ajuda a reduzir o impacto de uma falha física.</p>
+
+> **AZ-900:**  
+> **Domínio de atualização → manutenção planejada**  
+> **Domínio de falha → falha física**
+
+<p align="justify">As VMs são especialmente adequadas para aplicações que exigem maior controle sobre o ambiente de execução, como aplicações empresariais, bancos de dados e cargas de trabalho que dependem de configurações específicas do sistema operacional.</p>
+
+
+<h3><strong style='color: skyblue'>Área de Trabalho Virtual do Azure</strong></h3>
+
+<p align="justify">A <strong>Área de Trabalho Virtual do Azure (Azure Virtual Desktop – AVD)</strong> é um serviço de virtualização de desktops e aplicativos executado no Azure.</p>
+
+<p align="justify">Ele permite que os usuários acessem desktops e aplicativos Windows remotamente, utilizando diferentes dispositivos e locais.</p>
+
+<p align="justify">Com o Azure Virtual Desktop, as organizações podem fornecer ambientes de trabalho virtuais de forma centralizada, permitindo que sistemas operacionais, aplicativos e dados sejam disponibilizados aos usuários sem depender exclusivamente do computador local.</p>
+
+<p align="justify">O serviço é especialmente útil para cenários de trabalho remoto, trabalho híbrido, acesso centralizado a aplicativos e disponibilização de desktops para diferentes grupos de usuários.</p>
+
+> **AZ-900:** AVD = desktops e aplicativos Windows virtualizados na nuvem.
+
 
 <h3><strong style='color: skyblue'>Contêineres</strong></h3>
 
-<p align="justify">É uma opção de hospedagem de aplicativos para contêineres individuais. Ele permite executar contêineres sem a necessidade de gerenciar a infraestrutura subjacente. Ele oferece suporte a vários formatos de contêiner, como Docker e Open Container Initiative (OCI), e permite dimensionar horizontalmente seus contêineres.
-</p>
+<p align="justify">Os <strong>contêineres</strong> fornecem um ambiente isolado para executar aplicações e suas dependências. Diferentemente das máquinas virtuais, os contêineres compartilham o sistema operacional do host, tornando-os geralmente mais leves e rápidos para iniciar.</p>
 
-<p align="justify">
-Os contêineres são leves e projetados para serem criados, dimensionados e interrompidos dinamicamentepermitiindo que você responda às alterações sob demanda. Com contêineres, você pode reiniciar rapidamente se houver uma falha ou de uma interrupção de hardware. 
-</p>
+<p align="justify">Eles são projetados para serem criados, iniciados, interrompidos e dimensionados rapidamente, sendo adequados para aplicações modernas e arquiteturas baseadas em microsserviços.</p>
 
-<p align="justify">As Instâncias de Contêiner do Azure oferecem a maneira mais rápida e simples de executar um contêiner no Azure, sem a necessidade de gerenciar máquinas virtuais nem adotar serviços adicionais. Instâncias de Contêiner do Azure são uma oferta de PaaS (plataforma como serviço).</p>
+<p align="justify">Uma arquitetura de <strong>microsserviços</strong> divide uma aplicação em pequenos serviços independentes, que podem ser desenvolvidos, implantados e dimensionados separadamente.</p>
 
-<p align="justify">Os Aplicativos de Contêiner do Azure são semelhantes, em muitos aspectos, a uma instância de contêiner. Eles permitem que você comece a trabalhar imediatamente, removem a parte de gerenciamento de contêineres e são uma oferta de PaaS. Os Aplicativos de Contêiner têm benefícios extras, como a capacidade de incorporar balanceamento de carga e colocação em escala.</p>
 
-<p align="justify">Contêineres geralmente são usados para criar soluções que utilizam uma arquitetura de microsserviço. Essa arquitetura é onde você divide as soluções em partes menores e independentes. </p>
+### Instâncias de Contêiner do Azure
+
+<p align="justify">As <strong>Instâncias de Contêiner do Azure (Azure Container Instances – ACI)</strong> fornecem uma maneira rápida e simples de executar contêineres no Azure sem a necessidade de gerenciar máquinas virtuais ou uma infraestrutura de orquestração.</p>
+
+<p align="justify">O ACI é uma oferta de <strong>PaaS (Plataforma como Serviço)</strong> e é adequado principalmente para executar contêineres individuais de maneira rápida e simples.</p>
+
+> **AZ-900:** ACI = executar contêiner rapidamente, sem gerenciar VMs.
+
+
+### Aplicativos de Contêiner do Azure
+
+<p align="justify">Os <strong>Aplicativos de Contêiner do Azure (Azure Container Apps)</strong> permitem executar aplicações baseadas em contêiner sem a necessidade de gerenciar diretamente a infraestrutura subjacente.</p>
+
+<p align="justify">Além da execução dos contêineres, o serviço oferece recursos como dimensionamento automático, balanceamento de carga e suporte a aplicações baseadas em microsserviços.</p>
+
+<p align="justify">Assim como o ACI, o Azure Container Apps é uma oferta de <strong>PaaS</strong>, porém é direcionado a aplicações em contêiner que precisam de recursos adicionais de hospedagem e escalabilidade.</p>
+
+> **AZ-900:** Container Apps = aplicações em contêiner + escalabilidade + menos gerenciamento de infraestrutura.
+
 
 <h3><strong style='color: skyblue'>Kubernetes</strong></h3>
 
-<p align="justify">O Serviço de Kubernetes do Azure (AKS) é um serviço de orquestração de contêiner. Um serviço de orquestração gerencia o ciclo de vida dos contêineres. Quando você está implantando uma frota de contêineres, o AKS pode tornar o gerenciamento de frota mais simples e eficiente.</p>
+<p align="justify">O <strong>Azure Kubernetes Service (AKS)</strong> é um serviço de orquestração de contêineres baseado em Kubernetes.</p>
 
+<p align="justify">Um orquestrador de contêineres automatiza e gerencia o ciclo de vida de contêineres, incluindo implantação, escalabilidade, disponibilidade e gerenciamento de workloads.</p>
 
-<p align="justify">Resumindo, é melhor usar o Azure Container Instances quando você precisa de uma execução rápida e simples de contêineres isolados, especialmente em cargas de trabalho de curta duração ou tarefas pontuais. Por outro lado, o Azure Kubernetes Service é mais adequado para cargas de trabalho complexas e escaláveis, onde você precisa de recursos avançados de orquestração, gerenciamento e escalabilidade automática.
-</p>
+<p align="justify">O AKS é especialmente útil quando uma organização precisa gerenciar uma grande quantidade de contêineres ou aplicações distribuídas e necessita de recursos avançados de orquestração.</p>
+
+### Comparação
+
+| Serviço | Principal objetivo |
+|---|---|
+| **Azure Container Instances (ACI)** | Executar contêineres de forma simples e rápida |
+| **Azure Container Apps** | Executar aplicações em contêiner com escalabilidade e menos gerenciamento |
+| **Azure Kubernetes Service (AKS)** | Orquestrar e gerenciar contêineres em escala |
+
+> **AZ-900:**  
+> **ACI → contêiner simples**  
+> **Container Apps → aplicação em contêiner**  
+> **AKS → orquestração**
+
 
 <h3><strong style='color: skyblue'>Funções</strong></h3>
 
-<p align="justify">
-É uma plataforma de computação sem servidor que permite executar código em resposta a eventos. Ele é projetado para hospedar pequenos trechos de código que respondem a eventos, como acionadores de mensagens, acionadores de tempo ou acionadores HTTP. 
-</p>
+<p align="justify">O <strong>Azure Functions</strong> é um serviço de computação <strong>serverless</strong> e orientado a eventos, que permite executar pequenos trechos de código em resposta a eventos sem a necessidade de gerenciar a infraestrutura.</p>
 
-<p align="justify">É uma boa escolha para aplicativos que exigem escalabilidade automática e execução de tarefas pequenas e específicas em resposta a eventos. É uma opção popular para a criação de microsserviços e para a execução de tarefas em lotes.</p>
+<p align="justify">Uma função pode ser acionada por diferentes tipos de eventos, como:</p>
 
-<p align="justify">As funções podem ser sem estado ou com estado. Quando eles são sem estado (o padrão), eles se comportam como se fossem reiniciados sempre que respondem a um evento. Quando são com estado (chamadas de Durable Functions), um contexto é passado pela função para acompanhar a atividade anterior.</p>
+- Requisições HTTP.
+- Temporizadores.
+- Mensagens.
+- Eventos gerados por outros serviços do Azure.
 
-## Serviços de aplicativo do Azure
+<p align="justify">O Azure Functions é adequado para aplicações que precisam executar tarefas específicas em resposta a eventos e que podem se beneficiar da escalabilidade automática.</p>
 
-<p align="justify">O Serviço de Aplicativo do Azure é uma plataforma totalmente gerenciada para criar, implantar e escalar aplicativos com rapidez. O Serviço permite que você se concentre em criar e manter seu aplicativo, e o Azure se concentra em manter o ambiente em funcionamento.</p>
+<p align="justify">As funções podem ser <strong>sem estado</strong> ou <strong>com estado</strong>. Nas funções sem estado, cada execução é independente. Com <strong>Durable Functions</strong>, é possível manter informações sobre o estado e coordenar execuções de funções em fluxos de trabalho mais complexos.</p>
 
-<p align="justify">O Serviço de Aplicativo do Azure é um serviço com base em HTTP para hospedagem de aplicativos Web, APIs REST e back-ends móveis sendo uma oferta de PaaS. Ele dá suporte a várias linguagens, incluindo .NET, .NET Core, Java, Ruby, Node.js, PHP ou Python. Ele também dá suporte a ambientes Windows e Linux.</p>
+> **AZ-900:** Functions = código + evento + serverless.
+
+
+## Serviços de Aplicativo do Azure
+
+<h3><strong style='color: skyblue'>Serviço de Aplicativo</strong></h3>
+
+<p align="justify">O <strong>Serviço de Aplicativo do Azure (Azure App Service)</strong> é uma plataforma <strong>PaaS</strong> totalmente gerenciada para criar, implantar, hospedar e dimensionar aplicações.</p>
+
+<p align="justify">O serviço permite que você se concentre no desenvolvimento e na execução da aplicação, enquanto o Azure gerencia a infraestrutura subjacente.</p>
+
+<p align="justify">O Azure App Service é um serviço baseado em HTTP utilizado principalmente para hospedar:</p>
+
+- Aplicações Web.
+- APIs REST.
+- Back-ends de aplicações móveis.
+
+<p align="justify">O serviço oferece suporte a diversas linguagens e frameworks, incluindo .NET, Java, Node.js, PHP, Python e Ruby, além de ambientes Windows e Linux.</p>
+
+<p align="justify">Entre os recursos disponíveis estão escalabilidade, integração com sistemas de implantação, autenticação e autorização, domínios personalizados e certificados.</p>
+
+> **AZ-900:** App Service = hospedar Web Apps e APIs sem gerenciar diretamente a infraestrutura.
