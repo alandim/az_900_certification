@@ -1,69 +1,382 @@
-## Alta disponibilidade na nuvem
-<p align="justify">A alta disponibilidade concentra-se em garantir a máxima disponibilidade, independentemente de interrupções ou eventos que possam ocorrer.</p>
+## ☁️ AZ-900 — Benefícios da computação em nuvem
 
-<p align="justify">O Azure é um ambiente de nuvem altamente disponível com garantias de tempo de atividade, dependendo do serviço. Essas garantias fazem parte dos acordos de nível de serviço (SLAs).</p>
+<p align="justify">A nuvem oferece diversos benefícios além de simplesmente hospedar recursos. Para o AZ-900, é importante saber diferenciar principalmente <strong>alta disponibilidade, escalabilidade, confiabilidade, previsibilidade, segurança, governança e capacidade de gerenciamento</strong>.</p>
 
-## Escalabilidade
-<p align="justify">Refere-se à capacidade de um serviço ou aplicativo de lidar com o aumento da demanda sem comprometer seu desempenho. Isso é alcançado através da capacidade de aumentar ou diminuir rapidamente os recursos de computação.</p>
+---
 
-<p align="justify">A escala geralmente vem em duas variedades: vertical e horizontal. 
+<h3><strong style='color: skyblue'>1️⃣ Alta disponibilidade (High Availability)</strong></h3>
 
-- A escala vertical se concentra em aumentar ou diminuir a capacidade dos recursos. 
+<p align="justify"><strong>Alta disponibilidade</strong> significa manter aplicações e serviços disponíveis e funcionando pelo maior tempo possível, mesmo quando ocorrem falhas.</p>
 
-- A escala horizontal é adição ou subtração do número de recursos.</p>
-   
-## Confiabilidade
+<p align="justify">A nuvem pode utilizar recursos redundantes, zonas de disponibilidade e outras estratégias para reduzir o impacto de falhas.</p>
 
-<p align="justify">Confiabilidade é a capacidade que um sistema tem de se recuperar de falhas e continuar funcionando.</p>
+### Exemplo
 
-<p align="justify">Devido ao design descentralizado, a nuvem naturalmente dá suporte a uma infraestrutura confiável e resiliente. Com um design descentralizado, a nuvem permite que você tenha recursos implantados em várias regiões do mundo. Com essa escala global, mesmo que ocorra um evento catastrófico em uma região, as outras regiões ainda estarão em funcionamento.</p>
+<pre>
+                APLICAÇÃO
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+       Zona 1              Zona 2
+          │                   │
+       Instância           Instância
+          │                   │
+          └─────────┬─────────┘
+                    │
+              Serviço continua
+                 disponível
+</pre>
 
-## Previsibilidade
+<p align="justify">Se uma instância ou uma zona apresentar uma falha, outra instância poderá continuar atendendo às solicitações, dependendo da arquitetura adotada.</p>
 
-<p align="justify">A previsibilidade na nuvem permite que você avance com confiança. Implante uma solução construída em torno dessa estrutura e você terá uma solução cujo custo e desempenho são previsíveis.</p>
+> **AZ-900:** Alta disponibilidade = manter o serviço disponível mesmo diante de falhas.
 
-- A **previsibilidade de desempenho** se concentra em prever os recursos necessários para oferecer uma experiência positiva aos clientes. O dimensionamento automático, o balanceamento de carga e a alta disponibilidade são apenas alguns dos conceitos de nuvem que dão suporte.
+---
 
-- A **previsibilidade de custos** se concentra em prever o custo dos gastos com a nuvem. Com a nuvem, você pode acompanhar o uso de recursos em tempo real, monitorar os recursos para garantir a maior eficiência de uso possível e aplicar a análise de dados para encontrar padrões e tendências que ajudam a planejar melhor as implantações de recursos. 
+<h3><strong style='color: skyblue'>2️⃣ Escalabilidade (Scalability)</strong></h3>
 
-## Segurança
+<p align="justify"><strong>Escalabilidade</strong> é a capacidade de aumentar ou diminuir recursos para atender à demanda.</p>
 
-<p align="justify">A maioria dos provedores de nuvem oferece proteção contra ameaças externas, como ataques de hackers, bem como proteção contra ameaças internas, como acesso não autorizado a dados.</p>
+### Escala vertical — Scale Up / Down
 
-- **Segurança física:** A nuvem fornece segurança física avançada, com múltiplas camadas de proteção para seus data centers, incluindo câmeras de segurança, controles de acesso, sistemas de detecção de incêndio e outros recursos de segurança.
+<p align="justify">Aumenta ou reduz a capacidade de um recurso existente.</p>
 
-- **Segurança lógica:** A nuvem também oferece segurança lógica, incluindo criptografia de dados em repouso e em trânsito, detecção e prevenção de ameaças, e gerenciamento de identidades e acessos.
+<pre>
+VM pequena
+   │
+   ▼
+VM maior
+mais CPU / RAM
+</pre>
 
-## Governança
+### Escala horizontal — Scale Out / In
 
-<p align="justify">Os provedores de nuvem geralmente cumprem as regulamentações governamentais e da indústria. Isso significa que as empresas que lidam com dados regulamentados podem usar a nuvem sem se preocupar com a conformidade. 
-</p>
+<p align="justify">Adiciona ou remove instâncias.</p>
 
-## Gerenciamento
+<pre>
+       1 VM
+        │
+        ▼
+   ┌────┼────┐
+   ▼    ▼    ▼
+  VM1  VM2  VM3
+</pre>
 
-<p align="justify">A capacidade de gerenciamento se refere as boas práticas de implementação de nuvem em conformidade.</p>
+### Benefícios
 
-- **Gerenciamento da nuvem:** diz respeito a gerenciar seus recursos de nuvem.
-    - Escalar automaticamente a implantação de recursos com base na necessidade.
-    - Implantar recursos com base em um modelo pré-configurado, removendo a necessidade de configuração manual.
-    - Monitorar a integridade dos recursos e substituir automaticamente os recursos com falha.
-    - Receber alertas automáticos com base em métricas configuradas, de modo a ficar ciente do desempenho em tempo real.
-    
-- **Gerenciamento na nuvem:** diz respeito à maneira de gerenciar seu ambiente de nuvem e seus recursos. 
-    - Por meio de um portal da Web.
-    - Usando uma interface de linha de comando.
-    - Usando APIs.
-    - Usando o PowerShell.
+- Atender picos de demanda.
+- Reduzir recursos quando a demanda diminui.
+- Evitar desperdício de capacidade.
+- Melhorar o desempenho.
+- Adaptar a infraestrutura à necessidade da aplicação.
 
-## Sustentabilidade
+> **PEGADINHA AZ-900:**  
+> **Scale Up = aumentar o tamanho/capacidade.**  
+> **Scale Out = aumentar a quantidade de instâncias.**
 
-<p align="justify">A computação em nuvem pode apoiar metas de sustentabilidade quando as equipes otimizam ativamente a forma como os recursos são implantados e usados.</p>
+---
 
-   - Dimensionando os recursos quando a demanda diminui
-   - Desligando ou desalocando recursos que não estão em uso
-   - Escolha de serviços e configurações eficientes para reduzir o overprovisionamento
-   - Usando a governança e o monitoramento para rastrear as tendências de uso e otimizar as implantações ao longo do tempo
+<h3><strong style='color: skyblue'>3️⃣ Alta disponibilidade × Escalabilidade</strong></h3>
 
-## Agilidade
+| Conceito | Pergunta que responde |
+|---|---|
+| **Alta disponibilidade** | "O serviço continua disponível?" |
+| **Escalabilidade** | "Consigo aumentar/diminuir a capacidade?" |
 
-<p align="justify">Agilidade significa que você pode implantar e configurar recursos baseados em nuvem rapidamente à medida que os requisitos do aplicativo forem alterados.</p>
+> **DECORA:**  
+> 🟢 **Disponibilidade = continuar funcionando**  
+> 🔵 **Escalabilidade = aumentar/diminuir capacidade**
+
+---
+
+<h3><strong style='color: skyblue'>4️⃣ Confiabilidade (Reliability)</strong></h3>
+
+<p align="justify"><strong>Confiabilidade</strong> é a capacidade de um sistema funcionar de maneira consistente e se recuperar de falhas.</p>
+
+<p align="justify">A nuvem oferece recursos que ajudam a criar arquiteturas resilientes, como redundância, replicação, backup e distribuição geográfica.</p>
+
+### Exemplo
+
+<pre>
+Recurso principal
+      │
+      ├──────────► Cópia redundante
+      │
+      └──────────► Backup
+</pre>
+
+<p align="justify">Se houver uma falha, mecanismos de redundância ou recuperação podem permitir que o serviço continue ou seja restaurado.</p>
+
+> **AZ-900:** Confiabilidade = capacidade de operar de forma consistente e lidar com falhas.
+
+---
+
+<h3><strong style='color: skyblue'>5️⃣ Previsibilidade (Predictability)</strong></h3>
+
+<p align="justify">A nuvem permite maior <strong>previsibilidade</strong> de desempenho e custos por meio de recursos de monitoramento, métricas, autoscaling, modelos de preços e gerenciamento de capacidade.</p>
+
+### Previsibilidade de desempenho
+
+<p align="justify">É possível monitorar recursos e ajustar a capacidade de acordo com a demanda.</p>
+
+### Previsibilidade de custos
+
+<p align="justify">Ferramentas de gerenciamento de custos permitem acompanhar gastos, definir orçamentos e analisar tendências.</p>
+
+### Exemplo
+
+<pre>
+Monitoramento
+     │
+     ├── CPU
+     ├── Memória
+     ├── Tráfego
+     └── Custos
+             │
+             ▼
+      Ajustar recursos
+             │
+             ▼
+      Maior previsibilidade
+</pre>
+
+> **DECORA:**  
+> **Previsibilidade = saber/estimar melhor o comportamento e os custos do ambiente.**
+
+---
+
+<h3><strong style='color: skyblue'>6️⃣ Confiabilidade × Previsibilidade</strong></h3>
+
+| Conceito | Foco |
+|---|---|
+| **Confiabilidade** | Sistema funciona de forma consistente e lida com falhas |
+| **Previsibilidade** | Comportamento, desempenho e custos podem ser estimados/gerenciados |
+
+> **PEGADINHA:** Confiabilidade não significa simplesmente "ter backup". Backup é um mecanismo que pode contribuir para recuperação e confiabilidade.
+
+---
+
+<h3><strong style='color: skyblue'>7️⃣ Segurança na nuvem</strong></h3>
+
+<p align="justify">A nuvem oferece recursos e serviços para ajudar a proteger identidades, aplicações, redes e dados.</p>
+
+### Exemplos
+
+- Microsoft Entra ID → identidade e autenticação.
+- Microsoft Defender for Cloud → postura de segurança e proteção de workloads.
+- Network Security Groups → filtragem de tráfego.
+- Azure Key Vault → gerenciamento seguro de chaves e segredos.
+- Microsoft Sentinel → SIEM e análise de segurança.
+
+<p align="justify">Além dos recursos fornecidos pelo provedor, o cliente continua tendo responsabilidades de segurança conforme o modelo de responsabilidade compartilhada.</p>
+
+> **AZ-900:** Segurança na nuvem = recursos e controles para proteger identidade, dados, aplicações e infraestrutura.
+
+---
+
+<h3><strong style='color: skyblue'>8️⃣ Governança (Governance)</strong></h3>
+
+<p align="justify"><strong>Governança</strong> é o conjunto de processos, regras e controles usados para garantir que os recursos sejam utilizados de acordo com as políticas da organização.</p>
+
+### Exemplos no Azure
+
+- Azure Policy.
+- RBAC.
+- Tags.
+- Management Groups.
+- Azure Blueprints — conceito histórico que pode aparecer em materiais antigos, mas não é a ferramenta principal atual.
+
+### Exemplo
+
+<pre>
+Organização
+     │
+     ▼
+Política
+"Somente regiões aprovadas"
+     │
+     ▼
+Azure Policy
+     │
+     ▼
+Recursos avaliados
+</pre>
+
+<p align="justify">A governança ajuda a controlar conformidade, localização de recursos, configurações permitidas e padrões organizacionais.</p>
+
+> **DECORA:**  
+> **Segurança = proteger.**  
+> **Governança = controlar e garantir conformidade.**
+
+---
+
+<h3><strong style='color: skyblue'>9️⃣ Segurança × Governança</strong></h3>
+
+| Conceito | Pergunta |
+|---|---|
+| **Segurança** | "Como protegemos nossos recursos?" |
+| **Governança** | "Como garantimos que os recursos sejam utilizados de acordo com as regras?" |
+
+### Exemplo
+
+**Segurança:**
+
+> "Somente usuários autorizados podem acessar este recurso."
+
+**Governança:**
+
+> "Recursos desta organização só podem ser criados em regiões aprovadas."
+
+---
+
+<h3><strong style='color: skyblue'>🔟 Capacidade de gerenciamento (Manageability)</strong></h3>
+
+<p align="justify"><strong>Capacidade de gerenciamento</strong> é a facilidade de administrar, monitorar, configurar e automatizar os recursos na nuvem.</p>
+
+### Exemplos
+
+- Azure Portal.
+- Azure CLI.
+- Azure PowerShell.
+- Azure Resource Manager (ARM).
+- Azure Monitor.
+- Templates/IaC.
+- Automação.
+- Tags.
+- Políticas.
+
+### Gerenciamento centralizado
+
+<pre>
+                  AZURE
+                    │
+       ┌────────────┼────────────┐
+       │            │            │
+    Portal         CLI       PowerShell
+       │            │            │
+       └────────────┼────────────┘
+                    │
+                    ▼
+               Recursos
+</pre>
+
+<p align="justify">Em vez de administrar cada servidor individualmente, é possível utilizar ferramentas centralizadas para gerenciar grandes quantidades de recursos.</p>
+
+> **AZ-900:** Gerenciabilidade = facilidade para administrar, monitorar e automatizar recursos.
+
+---
+
+<h3><strong style='color: skyblue'>1️⃣1️⃣ Benefícios da capacidade de gerenciamento</strong></h3>
+
+### Monitoramento
+
+<p align="justify">Acompanhar métricas, logs, desempenho e disponibilidade.</p>
+
+### Automação
+
+<p align="justify">Executar tarefas automaticamente, reduzindo trabalho manual.</p>
+
+### Gerenciamento centralizado
+
+<p align="justify">Administrar recursos por ferramentas como Azure Portal, CLI e PowerShell.</p>
+
+### Infraestrutura como código
+
+<p align="justify">Definir infraestrutura por meio de arquivos/templates, tornando a implantação mais consistente e repetível.</p>
+
+### Tags
+
+<p align="justify">Adicionar informações aos recursos para organização, identificação, custos e gerenciamento.</p>
+
+---
+
+<h3><strong style='color: skyblue'>1️⃣2️⃣ Resumo dos benefícios</strong></h3>
+
+| Benefício | O que significa |
+|---|---|
+| **Alta disponibilidade** | Serviço continua disponível apesar de falhas |
+| **Escalabilidade** | Aumentar ou diminuir capacidade conforme demanda |
+| **Confiabilidade** | Operação consistente e capacidade de lidar com falhas |
+| **Previsibilidade** | Melhor capacidade de estimar/controlar desempenho e custos |
+| **Segurança** | Proteção de identidades, dados, aplicações e recursos |
+| **Governança** | Regras, políticas e conformidade |
+| **Gerenciabilidade** | Administrar, monitorar e automatizar recursos |
+
+---
+
+<h3><strong style='color: skyblue'>🧠 Mapa mental</strong></h3>
+
+<pre>
+                 BENEFÍCIOS DA NUVEM
+                         │
+       ┌─────────────────┼─────────────────┐
+       │                 │                 │
+  DISPONIBILIDADE    CONFIABILIDADE     SEGURANÇA
+       │                 │                 │
+       ├── Alta          ├── Resiliência   ├── Identidade
+       ├── Redundância   ├── Recuperação   ├── Dados
+       └── Zonas         └── Redundância   └── Rede
+       │
+       ▼
+  ESCALABILIDADE
+       │
+       ├── Scale Up
+       └── Scale Out
+
+       │
+       ▼
+  PREVISIBILIDADE
+       │
+       ├── Desempenho
+       └── Custos
+
+       │
+       ▼
+  GOVERNANÇA
+       │
+       ├── Políticas
+       ├── Conformidade
+       └── Controle
+
+       │
+       ▼
+  GERENCIABILIDADE
+       │
+       ├── Portal
+       ├── CLI
+       ├── PowerShell
+       ├── Monitoramento
+       └── Automação
+</pre>
+
+<h3><strong style='color: skyblue'>🎯 DECORAÇÃO FINAL AZ-900</strong></h3>
+
+<pre>
+ALTA DISPONIBILIDADE
+→ continuar funcionando
+
+ESCALABILIDADE
+→ aumentar/diminuir capacidade
+
+CONFIABILIDADE
+→ funcionar de forma consistente + lidar com falhas
+
+PREVISIBILIDADE
+→ estimar/controlar desempenho e custos
+
+SEGURANÇA
+→ proteger
+
+GOVERNANÇA
+→ estabelecer regras + conformidade
+
+GERENCIABILIDADE
+→ administrar + monitorar + automatizar
+</pre>
+
+> **🔥 PEGADINHA CLÁSSICA:**  
+> **Disponibilidade ≠ Escalabilidade ≠ Confiabilidade.**
+>
+> **Disponibilidade** → serviço está disponível?  
+> **Escalabilidade** → consigo ajustar a capacidade?  
+> **Confiabilidade** → o sistema consegue operar consistentemente e lidar com falhas?
