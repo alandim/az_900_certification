@@ -1,91 +1,269 @@
-## Definição
+## ☁️ AZ-900 — Conceitos de nuvem, modelos e preços
 
-<p align="justify">
-<strong style="color: gray;">Computação em nuvem (ou "cloud computing")</strong> é um modelo de entrega de serviços de TI onde os recursos, como servidores, armazenamento, bancos de dados, rede, software, e muito mais, são disponibilizados pela internet ("a nuvem") de forma rápida, e acessados sob demanda, pagando apenas pelo que usam.
-</p>
+<h3><strong style='color: skyblue'>1️⃣ O que é computação em nuvem?</strong></h3>
 
-<p>Os principais atributos da computação em nuvem:</p>
+<p align="justify"><strong>Computação em nuvem</strong> é a entrega de recursos de computação pela Internet, sob demanda, como servidores, armazenamento, bancos de dados, redes, aplicações e outros serviços.</p>
 
-1. Baseado em serviço
-2. Escalável/Elástico
-3. Compartilhado
-4. Medido por uso
-5. Baseado na Internet
+<p align="justify">Em vez de uma organização precisar comprar e manter toda a infraestrutura física, ela pode utilizar recursos fornecidos por um provedor de nuvem, como o Azure.</p>
 
-## Modelo de responsabilidade compartilhada
+### Exemplos de recursos na nuvem
 
-<p align="justify">O <strong style="color: gray;">modelo de responsabilidade compartilhada</strong> define que tanto o provedor de serviços em nuvem quanto o cliente compartilham a responsabilidade pela segurança e conformidade dos dados e sistemas hospedados na nuvem.
-</p>
-<p>O modelo de responsabilidade compartilhada está fortemente ligado aos tipos de serviço em nuvem: infraestrutura como serviço (IaaS), plataforma como serviço (PaaS) e software como serviço (SaaS).</p>
-<p>O diagrama a seguir destaca como o Modelo de Responsabilidade Compartilhada informa quem é responsável pelo que, dependendo do tipo de serviço na nuvem.</p>
-<p align="center">
-  <img src="https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/shared-responsibility-model.png" alt="Texto alternativo" width="1000" height="500">
-</p>
+- Máquinas virtuais.
+- Armazenamento.
+- Bancos de dados.
+- Redes.
+- Aplicações.
+- Serviços de IA.
+- Serviços de segurança.
 
-1. Você sempre será responsável por:
+> **AZ-900:** Nuvem = recursos de TI disponibilizados pela Internet, sob demanda.
 
-    * As informações e dados armazenados na nuvem
-    * Dispositivos que podem se conectar à sua nuvem
-    * As contas e identidades das pessoas, serviços e dispositivos em sua organização
+### Características fundamentais
 
-2. O provedor de nuvem é sempre responsável por:
-      * O datacenter físico
-      * A rede física
-      * Os hosts físicos
+- Recursos sob demanda.
+- Acesso pela rede/Internet.
+- Escalabilidade.
+- Elasticidade.
+- Modelo baseado em consumo.
+- Redução da necessidade de infraestrutura física própria.
 
-3. Seu modelo de serviço determinará a responsabilidade por coisas como:
-    * Sistemas operacionais
-    * controle de rede
-    * formulários
-    * identidade e infraestrutura
+---
 
-## Modelos de Nuvem
+<h3><strong style='color: skyblue'>2️⃣ Modelo de responsabilidade compartilhada</strong></h3>
 
-<p align="justify">Os modelos de nuvem são as formas como as empresas podem utilizar a computação em nuvem para atender às suas necessidades de negócios. Os principais modelos de nuvem são: <strong style="color: gray;">pública, privada e híbrida.</strong></p>
-<p align="center">
-  <img src="https://learn.microsoft.com/en-us/training/wwl-azure/describe-cloud-compute/media/cloud-deployment-models.png" alt="Texto alternativo" width="1000" height="500">
-</p>
+<p align="justify">No modelo de <strong>responsabilidade compartilhada</strong>, a segurança e o gerenciamento do ambiente são divididos entre o provedor de nuvem e o cliente.</p>
 
-1. **Nuvem Pública:** 
+<p align="justify">O Azure é responsável pela infraestrutura física e por determinados componentes do serviço. O cliente continua responsável por aspectos que dependem do serviço utilizado e de sua própria configuração.</p>
 
-<p align="justify">As nuvens públicas são a maneira mais comum de implantação da computação em nuvem. Os recursos de nuvem (como servidores e armazenamento) pertencem a um provedor de serviço de nuvem terceirizado, são operados por ele e entregues pela Internet. Com uma nuvem pública, todo o hardware, software e outras infraestruturas de suporte são de propriedade do provedor de nuvem e gerenciadas por ele.
+### Regra geral
 
-<p align="justify">Em uma nuvem pública, você compartilha os mesmos dispositivos de hardware, de armazenamento e de rede com outras organizações ou "locatários" da nuvem e acessa serviços e gerencia sua conta usando um navegador da Web. As implantações de nuvem pública geralmente são usadas para fornecer email baseado na Web, aplicativos de escritório online, armazenamento e ambientes de desenvolvimento e teste.
+<pre>
+             RESPONSABILIDADE
+                    │
+       ┌────────────┴────────────┐
+       │                         │
+     AZURE                    CLIENTE
+       │                         │
+ Infraestrutura             Dados
+ Datacenter                  Identidades
+ Hardware                    Configurações
+ Rede física                 Acesso
+ Virtualização               Aplicações*
+</pre>
 
-Vantagens: Redução de custos, sem manutenção, escalabilidade e alta confiabilidade.
+<p align="justify">Quanto mais gerenciado for o serviço, maior será a parcela de gerenciamento realizada pelo provedor.</p>
 
-2. **Nuvem Privada:** 
+### IaaS × PaaS × SaaS
 
-<p align="justify">Uma nuvem privada consiste em recursos de computação em nuvem usados exclusivamente por uma única empresa ou organização. A nuvem privada pode estar localizada fisicamente no datacenter local da sua organização ou pode ser hospedada por um provedor de serviços terceirizado. Mas em uma nuvem privada, os serviços e a infraestrutura são sempre mantidos na rede privada e o hardware e o software são dedicados unicamente à sua organização.
+<pre>
+IaaS
+│
+├── Azure → hardware / datacenter / virtualização
+└── Cliente → SO / aplicações / dados
 
-<p align="justify">Dessa forma, com a nuvem privada é mais fácil para que a organização personalize seus recursos a fim de atender a requisitos de TI específicos. As nuvens privadas geralmente são usadas por órgãos governamentais, instituições financeiras e outras organizações de grande porte com operações críticas para os negócios, que buscam melhorar o controle sobre seu ambiente.
+PaaS
+│
+├── Azure → infraestrutura + SO + runtime
+└── Cliente → aplicação + dados/configuração
 
-<p align="justify">Vantagens: Maior flexibilidade, controle e escalabilidade, segurança aprimorada.
+SaaS
+│
+├── Azure/provedor → infraestrutura + aplicação
+└── Cliente → dados + acesso + configurações
+</pre>
 
-3. **Nuvem Híbrida:** 
+> **PEGADINHA:** "Está na nuvem" não significa que o provedor é responsável por tudo.
 
-<p align="justify">Uma nuvem híbrida é um ambiente de computação que combina um datacenter local (também chamado de nuvem privada) com uma nuvem pública, permitindo que dados e aplicativos sejam compartilhados entre eles. 
+> **DECORA:** **Responsabilidade compartilhada = depende do serviço.**
 
-<p align="justify">Uma nuvem híbrida permite que você use os
-benefícios da computação em nuvem, além de poder controlar completamente um ambiente seguro usando seu próprio equipamento
-para atender aos requisitos de segurança e conformidade. 
+---
 
-<p align="justify">Muitas organizações adotam a abordagem de nuvem híbrida devido a exigências comerciais, por exemplo, para atender a requisitos regulatórios e de soberania de dados, aproveitar ao máximo o investimento em tecnologia local ou lidar com problemas envolvendo latência baixa.
+<h3><strong style='color: skyblue'>3️⃣ Modelos de implantação de nuvem</strong></h3>
 
-Vantagens: Controle, flexibilidade, custo-benefício e facilidade.
+<p align="justify">Os principais modelos de implantação são <strong>nuvem pública, nuvem privada e nuvem híbrida</strong>.</p>
 
-4. **MultiCloud:** 
-<p align="justify">Um quarto cenário, e cada vez mais provável, é um cenário multicloud. Em um cenário multicloud, você usa vários provedores de nuvem pública. Talvez você use recursos diferentes de provedores de nuvem diferentes. Ou talvez você tenha iniciado sua jornada na nuvem com um provedor e esteja em processo de migração para outro provedor. Independentemente disso, em um ambiente multicloud você lida com dois (ou mais) provedores de nuvem pública e gerencia recursos e segurança em ambos os ambientes.</p>
+---
 
+<h3><strong style='color: skyblue'>4️⃣ Nuvem pública (Public Cloud)</strong></h3>
 
-## Modelo baseado em Consumo
+<p align="justify">Na <strong>nuvem pública</strong>, os recursos são fornecidos por um provedor de nuvem e utilizados por diferentes clientes.</p>
 
-<p align="justify">A computação em nuvem opera em um modelo baseado no consumo. Você paga pelos recursos de TI que usa, e nada mais. Em vez de comprar e manter sua própria infraestrutura de datacenter, você aluga energia computacional e armazenamento e libera esses recursos quando terminar.</p>
+<p align="justify">A infraestrutura física pertence e é administrada pelo provedor.</p>
 
-<p align="justify">CapEx refere-se a gastos iniciais em infraestrutura física, como servidores, hardware de rede e espaço de datacenter. OpEx refere-se aos gastos contínuos com serviços ao longo do tempo. Como você paga por serviços em nuvem enquanto os consome, a computação em nuvem é classificada como uma despesa operacional.</p>
+### Exemplo
 
-## O que posso fazer com o Azure?
+<pre>
+                Azure
+                  │
+       ┌──────────┼──────────┐
+       │          │          │
+    Cliente A  Cliente B  Cliente C
+</pre>
 
-<p align="center">
-  <img src="https://learn.microsoft.com/pt-br/training/wwl-azure/describe-core-architectural-components-of-azure/media/azure-service-categories.png" alt="Texto alternativo" width="1000" height="500">
-</p>
+### Características
+
+- Infraestrutura do provedor.
+- Recursos acessados pela rede.
+- Não é necessário possuir datacenter próprio.
+- Alta escalabilidade.
+- Modelo de pagamento baseado em consumo é comum.
+
+### Casos de uso
+
+- Aplicações Web.
+- Startups.
+- Desenvolvimento e testes.
+- Aplicações que precisam escalar rapidamente.
+- Organizações que não querem manter infraestrutura física própria.
+
+> **DECORA:** **Pública = infraestrutura do provedor.**
+
+---
+
+<h3><strong style='color: skyblue'>5️⃣ Nuvem privada (Private Cloud)</strong></h3>
+
+<p align="justify">A <strong>nuvem privada</strong> é um ambiente de nuvem dedicado a uma única organização.</p>
+
+<p align="justify">Pode estar localizada no próprio datacenter da organização ou ser hospedada por um terceiro.</p>
+
+### Exemplo
+
+<pre>
+             ORGANIZAÇÃO
+                  │
+        ┌─────────┴─────────┐
+        │   Nuvem Privada   │
+        │                   │
+        │ Recursos dedicados│
+        └───────────────────┘
+</pre>
+
+### Características
+
+- Ambiente dedicado.
+- Maior controle sobre a infraestrutura.
+- Pode atender requisitos específicos de segurança ou conformidade.
+- Normalmente exige mais gerenciamento do que uma nuvem pública.
+
+### Casos de uso
+
+- Requisitos específicos de conformidade.
+- Necessidade de controle dedicado.
+- Aplicações que não podem ou não devem utilizar uma nuvem pública.
+- Organizações que já possuem infraestrutura de datacenter.
+
+> **DECORA:** **Privada = dedicada a uma organização.**
+
+---
+
+<h3><strong style='color: skyblue'>6️⃣ Nuvem híbrida (Hybrid Cloud)</strong></h3>
+
+<p align="justify">A <strong>nuvem híbrida</strong> combina ambientes de nuvem pública e privada/on-premises, permitindo que eles trabalhem de forma integrada.</p>
+
+### Exemplo
+
+<pre>
+       DATACENTER / PRIVADA
+                │
+                │ conexão
+                │
+                ▼
+          AZURE / PÚBLICA
+                │
+                ▼
+          Aplicações
+</pre>
+
+### Casos de uso
+
+- Manter sistemas legados on-premises e utilizar Azure para novos sistemas.
+- Expandir capacidade para a nuvem.
+- Manter determinados dados localmente.
+- Utilizar serviços de nuvem sem migrar tudo de uma vez.
+- Cenários de migração gradual.
+
+> **DECORA:** **Híbrida = pública + privada/on-premises trabalhando juntas.**
+
+---
+
+<h3><strong style='color: skyblue'>7️⃣ Comparação dos modelos de nuvem</strong></h3>
+
+| Modelo | Infraestrutura | Controle | Caso de uso |
+|---|---|---|---|
+| **Pública** | Provedor | Menor controle físico | Aplicações escaláveis |
+| **Privada** | Dedicada | Maior controle | Requisitos específicos |
+| **Híbrida** | Pública + privada | Integra os dois ambientes | Migração e integração |
+
+### Como identificar na prova
+
+> "A empresa quer utilizar infraestrutura compartilhada de um provedor."  
+> → **Nuvem pública**
+
+> "A empresa precisa de um ambiente dedicado exclusivamente a ela."  
+> → **Nuvem privada**
+
+> "A empresa quer manter parte da infraestrutura local e utilizar Azure para outra parte."  
+> → **Nuvem híbrida**
+
+---
+
+<h3><strong style='color: skyblue'>8️⃣ Modelo baseado em consumo (Consumption-Based Model)</strong></h3>
+
+<p align="justify">No <strong>modelo baseado em consumo</strong>, o cliente paga pelos recursos que utiliza, em vez de necessariamente comprar toda a infraestrutura antecipadamente.</p>
+
+### Modelo tradicional
+
+<pre>
+Comprar servidores
+      ↓
+Investimento inicial alto
+      ↓
+Infraestrutura própria
+      ↓
+Pagar mesmo se estiver subutilizada
+</pre>
+
+### Nuvem / consumo
+
+<pre>
+Usar recurso
+     ↓
+Medir consumo
+     ↓
+Pagar pelo uso
+     ↓
+Aumentar ou reduzir conforme necessidade
+</pre>
+
+### Benefícios
+
+- Menor investimento inicial.
+- Custos associados ao uso.
+- Flexibilidade.
+- Possibilidade de aumentar ou diminuir recursos.
+- Evita comprar capacidade muito superior à necessidade.
+
+> **DECORA:** **Consumption-based = paga pelo que usa.**
+
+---
+
+<h3><strong style='color: skyblue'>9️⃣ CapEx × OpEx</strong></h3>
+
+<p align="justify">Essa diferença é importante para o AZ-900.</p>
+
+### CapEx — Capital Expenditure
+
+<p align="justify">Gasto de capital para adquirir ativos físicos.</p>
+
+**Exemplos:**
+
+- Comprar servidores.
+- Comprar equipamentos de rede.
+- Construir/ampliar datacenter.
+
+<pre>
+CAPEX
+↓
+Comprar infraestrutura
+↓
+Grande investimento inicial
