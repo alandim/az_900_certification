@@ -1,69 +1,352 @@
-## Regiões
+## 🏗️ AZ-900 — Arquitetura e serviços do Azure
+### 🌍 Regiões, zonas, datacenters e hierarquia de recursos
 
-<p align="justify">Cada região do Azure é um conjunto de data centers que estão estrategicamente localizados em diferentes partes do mundo. Essas regiões são conectadas por uma rede de alta velocidade, permitindo que os serviços e recursos do Azure sejam disponibilizados globalmente.</p>
+<h3><strong style='color: skyblue'>1️⃣ Regiões do Azure</strong></h3>
 
-Vantagens:
+<p align="justify">Uma <strong>região do Azure</strong> é uma área geográfica do mundo que contém um ou mais datacenters conectados por uma rede de baixa latência.</p>
 
-- Latência reduzida: Ao escolher uma região próxima aos seus usuários ou recursos, você pode reduzir a latência de rede e melhorar o desempenho dos aplicativos e serviços hospedados no Azure.
+<p align="justify">Ao criar um recurso no Azure, normalmente você escolhe uma <strong>região</strong> onde esse recurso será hospedado.</p>
 
-- Conformidade com regulamentações locais: As regiões do Azure são projetadas para atender a requisitos de conformidade específicos em diferentes países e regiões, permitindo que você mantenha seus dados e aplicativos em conformidade com as leis e regulamentos locais.
+### Por que escolher uma região?
 
-- Redundância e resiliência: Ao implantar seus recursos em regiões do Azure separadas geograficamente, você pode obter maior redundância e resiliência, garantindo a disponibilidade contínua de seus aplicativos e dados, mesmo em caso de falhas em uma região específica.
+- Proximidade dos usuários → pode reduzir latência.
+- Requisitos de residência/localização dos dados.
+- Disponibilidade de determinados serviços.
+- Requisitos de conformidade.
+- Preços podem variar entre regiões.
+- Estratégias de recuperação de desastre e continuidade.
 
-- Escalabilidade global: O Azure oferece a capacidade de dimensionar globalmente seus aplicativos e serviços, aproveitando várias regiões do Azure para atender a demandas de tráfego e carga de trabalho em diferentes partes do mundo.
+> **AZ-900:** Região = localização geográfica onde os recursos do Azure são hospedados.
 
-## Pares de Regiões
+---
 
-<p align="justify">Os pares de regiões do Azure são um conceito que se refere à associação de duas regiões do Azure, dentro da mesma área geográfica, em uma configuração de emparelhamento. Os datacenters dentro de um par de regiões são separados por centenas de quilômetros, o que ajuda a garantir a continuidade do negócio e a resiliência do aplicativo. Se ocorrer uma interrupção em uma região, o Azure pode redirecionar o tráfego para a outra região do par.</p>
-<p align="justify">Cada região do par é designada como primária ou secundária. As regiões primárias são geralmente a primeira escolha para implantação de recursos, enquanto as regiões secundárias são usadas como backups em caso de falhas nas regiões primárias.
-</p>
-<p align="justify">A vantagem de utilizar pares de regiões do Azure é a capacidade de fornecer alta disponibilidade e resiliência para seus aplicativos e dados.</p>
+<h3><strong style='color: skyblue'>2️⃣ Pares de regiões (Region Pairs)</strong></h3>
 
-## Regiões Soberanas
+<p align="justify">Algumas regiões do Azure são agrupadas em <strong>pares de regiões</strong>. Essas regiões ficam relativamente próximas dentro da mesma área geográfica e são usadas para ajudar em estratégias de continuidade e recuperação.</p>
 
-<p align="justify">As Regiões Soberanas do Azure são regiões geográficas isoladas que são designadas para oferecer serviços de nuvem exclusivos para entidades governamentais e organizações que precisam cumprir requisitos de soberania, conformidade e resiliência de dados específicos de um país ou região. Essas regiões são projetadas para fornecer controle e proteção adicionais aos dados sensíveis e críticos do governo ou de organizações com requisitos de conformidade rigorosos.</p>
+<p align="justify">Os pares também ajudam a Azure a coordenar determinadas atualizações da plataforma, evitando que regiões emparelhadas sejam atualizadas simultaneamente em algumas situações.</p>
 
-## Descrever zonas de disponibilidade
+### Exemplo conceitual
 
-<p align="justify">Zonas de disponibilidade são datacenters separados fisicamente dentro de uma região do Azure. Cada zona de disponibilidade é composta de um ou mais datacenters equipados com energia, resfriamento e rede independentes. Uma zona de disponibilidade é configurada para ser um limite de isolamento. Se uma zona ficar inativa, as outras continuarão funcionando. Zonas de disponibilidade são conectadas por meio de redes de fibra óptica privadas de alta velocidade.</p>
+<pre>
+Região A ─────────────── Região B
+  │                         │
+  └──── Region Pair ────────┘
+       ↑
+       Redundância / recuperação
+</pre>
 
-<p align="justify">Pode usar as zonas de disponibilidade para executar aplicativos críticos e incorporar alta disponibilidade à arquitetura do aplicativo, colocalizando seus recursos de computação, armazenamento, rede e dados em uma zona de disponibilidade e replicando em outras zonas de disponibilidade.</p>
+> **PEGADINHA AZ-900:** Region Pair ≠ Availability Zone.
 
-<p align="justify">As zonas de disponibilidade são destinadas, principalmente, a VMs, discos gerenciados, balanceadores de carga e bancos de dados SQL. Os serviços do Azure que dão suporte às zonas de disponibilidade enquadram-se em três categorias:</p>
+- **Region Pair** → duas regiões geográficas diferentes.
+- **Availability Zone** → zonas fisicamente separadas dentro de uma mesma região.
 
-- **Serviços em zonas:** você fixa o recurso a uma zona específica (por exemplo, VMs, discos gerenciados, endereços IP).
+---
 
-- **Serviços com redundância de zona:** a plataforma replica automaticamente entre zonas (por exemplo, armazenamento com redundância de zona, Banco de Dados SQL).
+<h3><strong style='color: skyblue'>3️⃣ Regiões soberanas do Azure</strong></h3>
 
-- **Serviços não regionais:** os serviços estão sempre disponíveis em geografias do Azure e são resilientes a interrupções em toda a zona, bem como a interrupções em toda a região.
+<p align="justify">As <strong>regiões soberanas</strong> são ambientes separados das regiões públicas do Azure, destinados a atender requisitos específicos de governos e órgãos públicos.</p>
 
-## Descrever os datacenters do Azure
+<p align="justify">Exemplos conhecidos incluem:</p>
 
-<p align="justify">Os datacenters do Azure são instalações físicas em todo o mundo que são projetadas para hospedar servidores, armazenamento, redes e outros componentes de infraestrutura de nuvem do Azure. Cada datacenter do Azure é composto por milhares de servidores, roteadores, switches e outros equipamentos de rede, e é gerenciado por uma equipe de técnicos especializados em datacenters.</p>
+- <strong>Azure Government</strong> → ambientes para organizações governamentais dos Estados Unidos.
+- <strong>Azure China</strong> → regiões operadas separadamente na China.
 
-## Descrever os recursos e grupos de recursos do Azure
+<p align="justify">Esses ambientes possuem requisitos específicos de conformidade, residência de dados e operação.</p>
 
+> **DECORA:** Regiões soberanas = ambientes separados para requisitos específicos de governo/regulamentação.
 
-- **Recursos do Azure:** são os componentes de infraestrutura que constituem os serviços do Azure. Isso pode incluir, por exemplo, máquinas virtuais, bancos de dados, armazenamento, redes, entre outros. Cada recurso do Azure é identificado por um nome exclusivo e uma ID de recurso.
+---
 
-- **Grupos de recursos do Azure:** são containers lógicos que permitem gerenciar todos os recursos relacionados a um determinado aplicativo, solução ou ambiente. É possível adicionar, modificar ou excluir recursos dentro de um grupo de recursos sem afetar os outros grupos de recursos. Os grupos de recursos também permitem que você gerencie permissões e acesso para usuários e grupos específicos.
+<h3><strong style='color: skyblue'>4️⃣ Zonas de disponibilidade (Availability Zones)</strong></h3>
 
-<p align="justify">Os grupos de recursos no Azure proporcionam uma maneira eficiente de organizar e gerenciar seus recursos de forma estruturada. Eles permitem que você agrupe recursos com base em aplicativos, ambientes, soluções ou departamentos, facilitando o gerenciamento e a administração.</p>
+<p align="justify">As <strong>Availability Zones</strong> são locais físicos distintos dentro de uma região do Azure.</p>
 
-<p align="justify">Com um gerenciamento centralizado, você pode provisionar, monitorar, configurar e desativar vários recursos a partir de um único local. Além disso, os grupos de recursos oferecem controle de acesso granular, permitindo que você defina permissões específicas para usuários e grupos, restringindo o acesso apenas aos recursos necessários.</p>
+<p align="justify">Cada zona possui infraestrutura independente de energia, refrigeração e rede. As zonas são conectadas por uma rede de alta velocidade e baixa latência.</p>
 
-<p align="justify">Essa abordagem também simplifica o faturamento, permitindo que todos os recursos associados a um aplicativo ou solução sejam agrupados em um único item de faturamento, facilitando o gerenciamento de custos e a visualização das despesas.</p>
+### Exemplo
 
-## Descrever assinaturas
+<pre>
+                 REGIÃO AZURE
+                      │
+       ┌──────────────┼──────────────┐
+       │              │              │
+   Zona 1          Zona 2          Zona 3
+       │              │              │
+   Datacenter      Datacenter      Datacenter
+   independente   independente   independente
+</pre>
 
-<p align="justify">Uma assinatura do Azure é uma conta que fornece acesso aos serviços e recursos do Azure. Ao criar uma assinatura do Azure, você pode provisionar e gerenciar recursos do Azure, como máquinas virtuais, bancos de dados, armazenamento, redes, entre outros. Uma assinatura do Azure também permite que você gerencie permissões e acesso para usuários e grupos específicos.
-</p>
-<p align="justify">As assinaturas do Azure permitem que você gerencie e <u>controle os custos</u> dos serviços do Azure, incluindo monitoramento e faturamento em tempo real, além de permitir que você gerencie vários recursos do Azure em um único local, incluindo provisionamento, monitoramento, configuração e desativação.</p>
+<p align="justify">Se uma zona apresentar uma falha, workloads distribuídos em outras zonas podem continuar funcionando.</p>
 
-<p align="justify">Permitem que você aumente ou diminua o uso dos serviços do Azure com base nas necessidades do seu negócio, experimente e teste novos serviços e recursos do Azure antes de decidir se deseja implementá-los em escala.</p>
+> **AZ-900:** Availability Zone = proteção contra falha de datacenter dentro de uma região.
 
-## Descrever grupos de gerenciamento (Management Group)
+### Region x Availability Zone
 
-<p align="justify">A hierarquia de grupos de recursos, assinaturas e grupos de gerenciamento do Azure é um modelo de organização e gerenciamento de recursos de nuvem do Azure em diferentes níveis de abstração e escopo. Essa hierarquia é composta por grupos de gerenciamento, assinaturas e grupos de recursos.</p>
+| Conceito | O que é? |
+|---|---|
+| **Região** | Área geográfica |
+| **Availability Zone** | Local físico isolado dentro de uma região |
+| **Region Pair** | Duas regiões emparelhadas |
+| **Região soberana** | Ambiente separado para requisitos específicos |
 
-<p align="justify">Os grupos de gerenciamento são uma hierarquia de objetos que ajudam a gerenciar o acesso, a conformidade e a governança em grande escala no Azure. Eles permitem que você gerencie várias assinaturas do Azure como uma única entidade e aplique políticas e controles em toda a sua organização. Os grupos de gerenciamento do Azure permitem que você organize recursos do Azure em uma estrutura hierárquica com vários níveis, semelhante a uma árvore.</p>
+> **PEGADINHA:** Zonas de disponibilidade não são regiões diferentes.
+
+---
+
+<h3><strong style='color: skyblue'>5️⃣ Datacenters do Azure</strong></h3>
+
+<p align="justify">Um <strong>datacenter</strong> é uma instalação física que contém servidores, armazenamento, redes, energia, refrigeração e outros componentes necessários para executar os serviços de nuvem.</p>
+
+<p align="justify">Os datacenters do Azure são agrupados fisicamente para formar regiões e, quando aplicável, Availability Zones.</p>
+
+### Hierarquia simplificada
+
+<pre>
+MUNDO
+  │
+  └── Região do Azure
+         │
+         ├── Availability Zone 1
+         │      └── Datacenter(s)
+         │
+         ├── Availability Zone 2
+         │      └── Datacenter(s)
+         │
+         └── Availability Zone 3
+                └── Datacenter(s)
+</pre>
+
+> **DECORA:** Datacenter = infraestrutura física.  
+> **Zona = isolamento físico dentro da região.**  
+> **Região = localização geográfica.**
+
+---
+
+<h3><strong style='color: skyblue'>6️⃣ Recursos do Azure</strong></h3>
+
+<p align="justify">Um <strong>recurso</strong> é uma instância de um serviço do Azure que você cria e gerencia.</p>
+
+### Exemplos
+
+- Máquina virtual
+- Conta de armazenamento
+- Banco de dados
+- Rede virtual
+- Interface de rede
+- IP público
+- App Service
+- Key Vault
+
+<p align="justify">Cada recurso possui propriedades, configurações e permissões próprias.</p>
+
+> **AZ-900:** Recurso = algo que você cria/usa no Azure.
+
+---
+
+<h3><strong style='color: skyblue'>7️⃣ Grupos de recursos (Resource Groups)</strong></h3>
+
+<p align="justify">Um <strong>Resource Group</strong> é um contêiner lógico utilizado para organizar e gerenciar recursos do Azure.</p>
+
+### Exemplo
+
+<pre>
+Resource Group: RG-SISTEMA-VENDAS
+        │
+        ├── VM
+        ├── Storage Account
+        ├── Network Interface
+        ├── Public IP
+        └── Key Vault
+</pre>
+
+<p align="justify">Os recursos dentro de um grupo geralmente pertencem à mesma solução ou ciclo de vida.</p>
+
+### Características importantes
+
+- Um recurso pertence a <strong>um único Resource Group</strong>.
+- Um Resource Group pertence a <strong>uma única assinatura</strong>.
+- Recursos de regiões diferentes podem, em muitos casos, estar no mesmo Resource Group.
+- O Resource Group possui uma região para seus metadados.
+- É possível aplicar RBAC, políticas e tags no nível do Resource Group.
+
+> **PEGADINHA:** Resource Group não é um datacenter e não limita necessariamente todos os recursos à mesma região.
+
+---
+
+<h3><strong style='color: skyblue'>8️⃣ Assinaturas (Subscriptions)</strong></h3>
+
+<p align="justify">Uma <strong>Subscription</strong> é uma unidade lógica e administrativa dentro do Azure que fornece um limite para gerenciamento, cobrança e controle de acesso.</p>
+
+### Uma assinatura pode conter:
+
+<pre>
+Subscription
+    │
+    ├── Resource Group A
+    │      ├── VM
+    │      └── Storage
+    │
+    ├── Resource Group B
+    │      ├── VNet
+    │      └── Database
+    │
+    └── Resource Group C
+           └── App Service
+</pre>
+
+### Para que serve uma assinatura?
+
+- Gerenciamento de recursos.
+- Cobrança.
+- Controle de acesso.
+- Limites e quotas.
+- Separação de ambientes/projetos.
+
+<p align="justify">Uma organização pode ter várias assinaturas para separar, por exemplo, ambientes, departamentos ou projetos.</p>
+
+> **DECORA:** Subscription = limite de cobrança + gerenciamento + acesso.
+
+---
+
+<h3><strong style='color: skyblue'>9️⃣ Grupos de gerenciamento (Management Groups)</strong></h3>
+
+<p align="justify">Os <strong>Management Groups</strong> permitem organizar e gerenciar várias assinaturas em uma estrutura hierárquica.</p>
+
+<p align="justify">Eles são especialmente úteis para aplicar políticas e controles de governança em várias assinaturas.</p>
+
+### Exemplo
+
+<pre>
+Management Group
+       │
+       ├── Subscription A
+       │
+       ├── Subscription B
+       │
+       └── Subscription C
+</pre>
+
+<p align="justify">Uma política aplicada em um Management Group pode ser herdada pelas assinaturas e recursos abaixo dele, dependendo da configuração.</p>
+
+> **AZ-900:** Management Group = agrupa e governa várias subscriptions.
+
+---
+
+<h3><strong style='color: skyblue'>🔟 Hierarquia do Azure</strong></h3>
+
+<p align="justify">A hierarquia administrativa do Azure é fundamental para entender onde políticas, permissões e recursos podem ser aplicados.</p>
+
+### Estrutura
+
+<pre>
+Tenant / Microsoft Entra ID
+          │
+          ▼
+  Management Group
+          │
+          ├───────────────┐
+          ▼               ▼
+   Subscription A   Subscription B
+          │               │
+          ▼               ▼
+   Resource Group    Resource Group
+          │               │
+          ▼               ▼
+       Resources        Resources
+</pre>
+
+### Hierarquia principal para memorizar
+
+<pre>
+Management Group
+       ↓
+Subscription
+       ↓
+Resource Group
+       ↓
+Resource
+</pre>
+
+> **DECORA AZ-900:**  
+> **Management Group → Subscription → Resource Group → Resource**
+
+---
+
+<h3><strong style='color: skyblue'>1️⃣1️⃣ Como diferenciar tudo na prova</strong></h3>
+
+| Conceito | Pense em... | Função principal |
+|---|---|---|
+| **Região** | 🌍 Localização | Onde os recursos são hospedados |
+| **Region Pair** | 🔗 Regiões | Continuidade/recuperação |
+| **Availability Zone** | 🏢 Zona física | Resiliência dentro da região |
+| **Datacenter** | 🖥️ Infraestrutura física | Servidores e infraestrutura |
+| **Resource** | ⚙️ Serviço | Instância de um serviço |
+| **Resource Group** | 📦 Pasta | Agrupar recursos |
+| **Subscription** | 💳 Conta administrativa | Cobrança + gerenciamento |
+| **Management Group** | 🗂️ Pasta de subscriptions | Governança em escala |
+
+---
+
+<h3><strong style='color: skyblue'>🧠 Mapa mental para decorar</strong></h3>
+
+<pre>
+                    AZURE
+                      │
+        ┌─────────────┴─────────────┐
+        │                           │
+   INFRAESTRUTURA               HIERARQUIA
+        │                           │
+        ├── Região                  ├── Management Group
+        │     │                     │
+        │     ├── Zone 1            ├── Subscription
+        │     ├── Zone 2            │
+        │     └── Zone 3            ├── Resource Group
+        │                           │
+        └── Datacenters             └── Resource
+                      
+REGIÃO
+  └── localização geográfica
+
+AVAILABILITY ZONE
+  └── isolamento físico dentro da região
+
+REGION PAIR
+  └── região ↔ região
+
+RESOURCE
+  └── serviço/instância
+
+RESOURCE GROUP
+  └── agrupa recursos
+
+SUBSCRIPTION
+  └── cobrança + gerenciamento
+
+MANAGEMENT GROUP
+  └── agrupa subscriptions
+</pre>
+
+<h3><strong style='color: skyblue'>🎯 Resumo para a prova</strong></h3>
+
+| Se a questão falar de... | Resposta provável |
+|---|---|
+| Localização geográfica | **Region** |
+| Datacenters isolados dentro de uma região | **Availability Zones** |
+| Continuidade entre regiões | **Region Pairs** |
+| Infraestrutura física | **Datacenter** |
+| Instância de um serviço | **Resource** |
+| Agrupar recursos de uma solução | **Resource Group** |
+| Cobrança e limite administrativo | **Subscription** |
+| Governança de várias subscriptions | **Management Group** |
+| Estrutura administrativa | **Management Group → Subscription → Resource Group → Resource** |
+
+> **🔥 DECORAÇÃO FINAL:**  
+> 🌍 **Região** = onde  
+> 🏢 **Zona** = isolamento físico  
+> 🖥️ **Datacenter** = infraestrutura física  
+> ⚙️ **Recurso** = o que você cria  
+> 📦 **Resource Group** = agrupa recursos  
+> 💳 **Subscription** = cobrança/limite administrativo  
+> 🗂️ **Management Group** = agrupa subscriptions  
+> 🔗 **Region Pair** = duas regiões para resiliência
