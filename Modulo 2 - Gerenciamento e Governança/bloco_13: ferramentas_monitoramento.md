@@ -1,30 +1,435 @@
-## Assistente do Azure (Advisor)
+## 🩺 Monitoramento, suporte e integridade do Azure
 
-<p align="justify">O Azure Advisor é um serviço do Azure que fornece recomendações personalizadas para otimizar as implantações de recursos do Azure. Ele analisa a implantação do Azure e recomenda soluções para melhorar a segurança, desempenho, confiabilidade e reduzir os custos. O Azure Advisor também usa as práticas recomendadas da Microsoft para ajudar os usuários a otimizar seus recursos do Azure.</p>
+<h3><strong style='color: skyblue'>1️⃣ Assistente do Azure — Azure Advisor</strong></h3>
 
-<p align="justify">O serviço de recomendação inclui ações sugeridas que você pode adotar imediatamente, adiar ou ignorar.
-As recomendações estão disponíveis por meio do portal do Azure e da API, e é possível configurar notificações para alertar você sobre novas recomendações.</p>
+<p align="justify">O <strong>Azure Advisor</strong> é um serviço que analisa os recursos do Azure e fornece <strong>recomendações personalizadas</strong> para ajudar a melhorar o ambiente.</p>
 
-## Integridade de Serviço (Azure Service Health)
+### 🎯 Para que serve?
 
-<p align="justify">Azure Service Health é um serviço no Microsoft Azure que ajuda a monitorar e manter a integridade dos serviços em nuvem. Ele fornece informações sobre a integridade de serviços em nuvem, manutenções planejadas e problemas conhecidos em todo o mundo.</p>
+O Advisor fornece recomendações em áreas como:
 
-<p align="justify">Usando o status do Azure, a integridade do serviço e a integridade do recurso, o Azure Service Health oferece uma visão completa do seu ambiente do Azure, desde o status global dos serviços e regiões do Azure até recursos específicos. Além disso, os alertas históricos são armazenados e ficam acessíveis para revisão posterior. Algo que você inicialmente pensou ser uma anomalia simples e se transformou em uma tendência, pode ser prontamente revisado e investigado graças aos alertas históricos.</p>
+- 💰 **Custo** — identificar oportunidades de reduzir gastos.
+- ⚡ **Desempenho** — melhorar performance.
+- 🔐 **Segurança** — identificar oportunidades de melhorar a segurança.
+- 🛡️ **Confiabilidade** — melhorar a disponibilidade/resiliência.
+- 🏗️ **Excelência operacional** — melhorar práticas de operação.
 
-<p align="justify">O Azure Service Health fornece três tipos de informações:</p>
+### 🧠 Exemplo
 
-1. Status de serviço: informa se um serviço do Azure está ativo ou inativo e fornece informações sobre a causa da interrupção, se houver.
+Imagine que você possui uma VM que está sendo pouco utilizada.
 
-2. Atualizações de manutenção: informações sobre as manutenções planejadas nos serviços do Azure, incluindo horário previsto, duração e impacto.
+O Azure Advisor pode identificar a situação e recomendar uma ação de otimização.
 
-3. Avisos de problemas: notificações sobre problemas conhecidos que afetam os serviços do Azure, incluindo a causa do problema e a solução recomendada.
+```text
+Recursos Azure
+      │
+      ▼
+Azure Advisor
+      │
+      ▼
+Analisa ambiente
+      │
+      ▼
+Recomendações
+ ├── 💰 Custo
+ ├── ⚡ Desempenho
+ ├── 🔐 Segurança
+ ├── 🛡️ Confiabilidade
+ └── 🏗️ Operação
+```
 
-## Azure Monitor
+> **AZ-900:** Azure Advisor = **RECOMENDAÇÕES para otimizar o ambiente**.
 
-<p align="justify">é uma solução de monitoramento unificado para o Microsoft Azure, fornecendo visibilidade e insights em tempo real sobre o desempenho e integridade de aplicativos e serviços em execução no Azure.</p>
+### ⚠️ PEGADINHA
 
-<p align="justify">Log Analytics: permite coletar e analisar dados de log de vários recursos do Azure e de aplicativos em execução em outras plataformas. Com o Log Analytics, os usuários podem coletar dados de vários locais, normalizá-los e visualizá-los em um único local.</p>
+**Advisor não é Azure Monitor.**
 
-<p align="justify">Azure Monitor Alerts: permite definir alertas personalizados com base em eventos ou métricas de monitoramento. Com o Azure Monitor Alerts, os usuários podem receber notificações em tempo real sobre problemas de desempenho ou integridade, permitindo uma resposta mais rápida a incidentes.</p>
+| Serviço | Pergunta principal |
+|---|---|
+| **Azure Advisor** | "Como posso melhorar/otimizar meu ambiente?" |
+| **Azure Monitor** | "O que está acontecendo com meu ambiente?" |
+| **Service Health** | "Existe algum problema/incidente afetando meus serviços Azure?" |
 
-<p align="justify">Application Insights: é uma ferramenta de monitoramento de desempenho de aplicativos que fornece informações detalhadas sobre o desempenho de aplicativos, incluindo métricas de desempenho, rastreamento de solicitações e detecção de exceções. Ele pode ser usado para monitorar aplicativos em execução no Azure e em outras plataformas.</p>
+---
+
+<h3><strong style='color: skyblue'>2️⃣ Integridade do Serviço do Azure — Azure Service Health</strong></h3>
+
+<p align="justify">O <strong>Azure Service Health</strong> fornece informações sobre a <strong>integridade dos serviços do Azure</strong> e ajuda a identificar problemas que podem afetar seus recursos.</p>
+
+Ele reúne informações importantes sobre eventos e problemas do Azure que podem impactar seu ambiente.
+
+### 🎯 Principais componentes
+
+| Componente | Finalidade |
+|---|---|
+| **Azure Status** | Visão global da disponibilidade dos serviços Azure |
+| **Service Health** | Informações personalizadas sobre eventos que podem afetar você |
+| **Resource Health** | Estado de integridade de um recurso específico |
+
+### 🟢 Azure Status
+
+Mostra uma visão **global** do Azure.
+
+Exemplo:
+
+```text
+Azure Status
+     │
+     ├── Serviço X → problema global
+     ├── Serviço Y → normal
+     └── Serviço Z → incidente
+```
+
+> **Palavra-chave:** visão **global**.
+
+### 🔔 Service Health
+
+Mostra informações relevantes para o **seu ambiente**, como:
+
+- Incidentes de serviço.
+- Manutenções planejadas.
+- Avisos de saúde.
+- Informações sobre impacto nos serviços.
+
+> **Palavra-chave:** impacto **no seu ambiente**.
+
+### 🖥️ Resource Health
+
+Permite verificar a saúde de um **recurso específico**.
+
+Exemplo:
+
+```text
+Minha VM
+   │
+   ▼
+Resource Health
+   │
+   ├── Disponível
+   ├── Indisponível
+   └── Estado degradado
+```
+
+> **DECORA:**  
+> **Status = Azure inteiro**  
+> **Service Health = impacto nos meus serviços**  
+> **Resource Health = meu recurso específico**
+
+---
+
+<h3><strong style='color: skyblue'>3️⃣ Azure Monitor</strong></h3>
+
+<p align="justify">O <strong>Azure Monitor</strong> é uma plataforma de monitoramento que coleta e analisa <strong>métricas, logs e outros dados de telemetria</strong> de aplicações e recursos.</p>
+
+A ideia central é:
+
+```text
+RECURSOS / APLICAÇÕES
+          │
+          ▼
+     Azure Monitor
+          │
+     ┌────┼────┐
+     ▼    ▼    ▼
+  Métricas Logs Alertas
+```
+
+### 🎯 Para que serve?
+
+- Monitorar desempenho.
+- Detectar problemas.
+- Analisar métricas.
+- Consultar logs.
+- Criar alertas.
+- Identificar tendências.
+- Monitorar aplicações.
+- Investigar incidentes.
+
+> **AZ-900:** Azure Monitor = **monitorar e analisar o desempenho e a operação dos recursos/aplicações**.
+
+---
+
+<h3><strong style='color: skyblue'>4️⃣ Azure Monitor — Métricas × Logs</strong></h3>
+
+Essa diferença é importante.
+
+### 📊 Métricas
+
+São valores numéricos medidos ao longo do tempo.
+
+Exemplos:
+
+- CPU %
+- Memória
+- Latência
+- Número de requisições
+- Throughput
+
+```text
+VM
+ │
+ ├── CPU: 85%
+ ├── Requests: 2.500
+ └── Latência: 120 ms
+```
+
+### 📜 Logs
+
+Contêm informações/eventos registrados pelos recursos e aplicações.
+
+Podem ajudar a responder:
+
+> "O que aconteceu?"
+
+Exemplo:
+
+```text
+18:30 → Login recebido
+18:31 → Erro 500
+18:32 → Consulta SQL executada
+18:33 → Timeout
+```
+
+> **DECORA:**  
+> **Métrica = número/medição**  
+> **Log = evento/informação registrada**
+
+---
+
+<h3><strong style='color: skyblue'>5️⃣ Log Analytics</strong></h3>
+
+<p align="justify">O <strong>Log Analytics</strong> é uma ferramenta do Azure Monitor usada para <strong>consultar e analisar dados de logs</strong> armazenados em um <strong>Log Analytics workspace</strong>.</p>
+
+Ele utiliza a linguagem **Kusto Query Language (KQL)** para realizar consultas.
+
+### 🧠 Fluxo
+
+```text
+Recursos / Aplicações
+        │
+        ▼
+      Logs
+        │
+        ▼
+Log Analytics Workspace
+        │
+        ▼
+   Log Analytics
+        │
+        ▼
+       KQL
+        │
+        ▼
+   Análise / Investigação
+```
+
+### 🎯 Exemplo conceitual
+
+Você quer descobrir:
+
+> "Quais erros ocorreram nas últimas 24 horas?"
+
+O Log Analytics permite consultar os logs usando KQL.
+
+> **AZ-900:** Log Analytics = **consultar/analisar logs**.
+
+### ⚠️ PEGADINHA
+
+**Log Analytics não é o mesmo que Azure Monitor.**
+
+```text
+Azure Monitor
+     │
+     ├── Métricas
+     ├── Logs
+     ├── Alertas
+     └── Application Insights
+              │
+              ▼
+       Monitoramento de aplicações
+
+Log Analytics
+     │
+     └── Consulta/análise de logs
+         usando KQL
+```
+
+---
+
+<h3><strong style='color: skyblue'>6️⃣ Alertas do Azure Monitor</strong></h3>
+
+<p align="justify">Os <strong>Azure Monitor Alerts</strong> permitem configurar condições para que o Azure <strong>detecte situações importantes e gere notificações ou ações</strong>.</p>
+
+### 🧠 Exemplo
+
+Você pode criar um alerta:
+
+```text
+CPU > 90%
+   │
+   ▼
+Azure Monitor
+   │
+   ▼
+Condição satisfeita
+   │
+   ▼
+🔔 ALERTA
+   │
+   ▼
+Notificação / ação
+```
+
+Podem ser usados para monitorar:
+
+- Métricas.
+- Logs.
+- Atividade.
+- Disponibilidade.
+- Condições específicas dos recursos.
+
+> **AZ-900:** Alertas = **reagir quando uma condição definida for atingida**.
+
+### ⚠️ Diferença importante
+
+```text
+Azure Monitor
+     │
+     ├── COLETA dados
+     ├── ANALISA dados
+     └── DETECTA condições
+                │
+                ▼
+             ALERTA
+                │
+                ▼
+       Notificação / ação
+```
+
+---
+
+<h3><strong style='color: skyblue'>7️⃣ Application Insights</strong></h3>
+
+<p align="justify">O <strong>Azure Monitor Application Insights</strong> é um recurso do Azure Monitor voltado para <strong>monitoramento de aplicações</strong>.</p>
+
+Ele ajuda desenvolvedores e equipes de operações a entender como uma aplicação está funcionando e identificar problemas.
+
+### 🎯 Pode ajudar a monitorar:
+
+- Disponibilidade da aplicação.
+- Requisições.
+- Tempo de resposta.
+- Erros e exceções.
+- Dependências.
+- Desempenho.
+- Comportamento da aplicação.
+
+### 🧠 Exemplo
+
+Uma API está apresentando lentidão.
+
+```text
+Usuário
+   │
+   ▼
+Aplicação
+   │
+   ├── Requisição → 2s
+   ├── Banco      → 1,7s
+   └── API        → 2s
+          │
+          ▼
+ Application Insights
+          │
+          ▼
+ Identifica gargalo
+```
+
+> **AZ-900:** Application Insights = **monitoramento de aplicações e sua performance/telemetria**.
+
+---
+
+<h3><strong style='color: skyblue'>8️⃣ Como tudo se relaciona?</strong></h3>
+
+<pre>
+                    AZURE
+                      │
+       ┌──────────────┴──────────────┐
+       │                             │
+   SERVICE HEALTH                AZURE MONITOR
+       │                             │
+       │                  ┌──────────┼───────────┐
+       │                  │          │           │
+   Saúde do Azure       Métricas    Logs      Alertas
+       │                             │
+       │                             ▼
+       │                       Log Analytics
+       │                             │
+       │                            KQL
+       │
+       └── Incidentes
+       └── Manutenções
+       └── Avisos
+       └── Impactos
+
+                           AZURE MONITOR
+                                │
+                                ▼
+                       APPLICATION INSIGHTS
+                                │
+                                ▼
+                       Aplicações / APIs
+                       ├── Requests
+                       ├── Errors
+                       ├── Performance
+                       └── Dependencies
+
+
+                    AZURE ADVISOR
+                         │
+                         ▼
+                   RECOMENDAÇÕES
+                   ├── Custo
+                   ├── Segurança
+                   ├── Performance
+                   ├── Confiabilidade
+                   └── Operação
+</pre>
+
+<h3><strong style='color: skyblue'>🔥 DECORAÇÃO FINAL</strong></h3>
+
+> **Advisor → "Como posso melhorar meu ambiente?"**
+
+> **Service Health → "Existe algum problema/manutenção do Azure que afeta meus serviços?"**
+
+> **Resource Health → "Qual é o estado deste recurso específico?"**
+
+> **Azure Monitor → "O que está acontecendo no meu ambiente?"**
+
+> **Log Analytics → "Quero consultar/analisar os logs."**
+
+> **Monitor Alerts → "Avise-me quando uma condição acontecer."**
+
+> **Application Insights → "Como minha aplicação está funcionando?"**
+
+### 🎯 PEGADINHAS AZ-900
+
+- **Recomendação para reduzir custos → Azure Advisor**
+- **Recomendação para melhorar segurança → Azure Advisor**
+- **Incidente/manutenção do Azure que pode afetar seu ambiente → Service Health**
+- **Visão global da disponibilidade do Azure → Azure Status**
+- **Saúde de uma VM/recurso específico → Resource Health**
+- **Monitoramento de métricas e logs → Azure Monitor**
+- **Consulta de logs usando KQL → Log Analytics**
+- **CPU ultrapassou determinado limite e você quer ser avisado → Azure Monitor Alert**
+- **Monitorar requisições, erros e desempenho de uma aplicação → Application Insights**
+
+> 🧠 **REGRA DE 7 SEGUNDOS:**
+>
+> **ADVISOR = RECOMENDA**  
+> **SERVICE HEALTH = INCIDENTES/MANUTENÇÃO**  
+> **RESOURCE HEALTH = RECURSO**  
+> **MONITOR = MONITORA**  
+> **LOG ANALYTICS = LOGS + KQL**  
+> **ALERT = AVISA**  
+> **APPLICATION INSIGHTS = APLICAÇÃO**
