@@ -267,6 +267,7 @@ CAPEX
 Comprar infraestrutura
 ↓
 Grande investimento inicial
+</pre>
 
 ### OpEx - Operational Expenditure
 
