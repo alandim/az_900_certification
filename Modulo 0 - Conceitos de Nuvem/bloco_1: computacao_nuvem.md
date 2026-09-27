@@ -267,3 +267,14 @@ CAPEX
 Comprar infraestrutura
 ↓
 Grande investimento inicial
+
+### OpEx - Operational Expenditure
+
+<p align="justify"> refere-se às despesas operacionais recorrentes necessárias para manter o negócio funcionando no dia a dia.</p>
+
+**Exemplos:**
+
+- aluguel
+- salários
+- contas de luz
+- assinaturas de software
